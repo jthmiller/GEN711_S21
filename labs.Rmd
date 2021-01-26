@@ -38,53 +38,53 @@ __Week 1__</br>
 
 __Week 2__</br>
 - Log in to [Jetstream](https://use.jetstream-cloud.org/). Here is some [info about it](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview).</br>
-- [Setting up your Jetstream VM](usingssh.html)</br>
-- [Launch a Jetstream instance](jetstream.html)</br>
-- [Connect to a Jetstream instance](connect.html)</br>
+- [Setting up your Jetstream VM](labs/usingssh.html)</br>
+- [Launch a Jetstream instance](labs/jetstream.html)</br>
+- [Connect to a Jetstream instance](labs/connect.html)</br>
 
 __Week 3__</br>
-- [Command Line BLAST](lab1_blast.html)</br>
+- [Command Line BLAST](labs/lab1_blast.html)</br>
 
 __Week 4__</br>
-- [Use a HMM to identify unknown sequences](hmmer.html)</br>
+- [Use a HMM to identify unknown sequences](labs/hmmer.html)</br>
 
 __Week 5__</br>
 - MSA?</br>
 
 __Week 6__ </br>
-- [Trimming fastQ files](trimming.html)</br>
+- [Trimming fastQ files](labs/trimming.html)</br>
 
 ***
 ### __Practice Exams__</br>
-- Practice Exam1 [A](lab_exam1.html)
-- Practice Exam1 [B](lab_exam1a.html)
-- Practice Exam1 [C](lab_exam1b.html)
-- Practice Exam1 [D](lab_exam1c.html)
+- Practice Exam1 [A](labs/lab_exam1.html)
+- Practice Exam1 [B](labs/lab_exam1a.html)
+- Practice Exam1 [C](labs/lab_exam1b.html)
+- Practice Exam1 [D](labs/lab_exam1c.html)
 - [Exam 1 section 1]()
 - [Exam 1 section 2]()
 
 ***
 ### __Lab Schedule continued__
 __Week 9__</br>
-- [transcriptome assembly](transcriptome.html)</br>
+- [transcriptome assembly](labs/transcriptome.html)</br>
 
 __Week 10__</br>
-- [gene expression](expression.html)</br>
+- [gene expression](labs/expression.html)</br>
 
 __Week 11__</br>
-- [genome assembly](bacterial_assembly.html)</br>
+- [genome assembly](labs/bacterial_assembly.html)</br>
 
 __Week ?__</br>
-- [final project tips](final_project.m)</br>
+- [final project tips](labs/final_project.m)</br>
 
 __Week ?__</br>
-- [Use phylogenetics to identify unknown sequences](phylogenetics.html)</br>
+- [Use phylogenetics to identify unknown sequences](labs/phylogenetics.html)</br>
 
 __Week ?__ </br>
-- [Mapping read data!!!](mapping.html)</br>
+- [Mapping read data!!!](labs/mapping.html)</br>
 
 __Week ?__</br>
-- [kmers](khmer.html)</br>
+- [kmers](labs/khmer.html)</br>
 
 ***
 
@@ -94,7 +94,7 @@ __Week ?__</br>
 
 - [Github](https://macmanes.github.io/GEN711_S21/)
 
-- [Summer Workshops](ps: http://angus.readthedocs.org/en/2014)
+- [Summer Workshops](http://angus.readthedocs.org/en/2014)
 
 - [More Summer Workshops](http://angus.readthedocs.org/en/2015)
 
