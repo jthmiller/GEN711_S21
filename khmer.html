@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>khmer.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,110 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
+<div id="lab-7-khmer" class="section level2">
+<h2>Lab 7: khmer</h2>
+<p>During this lab, we will acquaint ourselves with digital normalization. You will:</p>
+<ol style="list-style-type: decimal">
+<li><p>Install software and download data</p></li>
+<li><p>Quality and adapter trim data sets.</p></li>
+<li><p>Apply digital normalization to the dataset.</p></li>
+<li><p>Count and compare kmers and kmer distributions in the normalized and un-normalized dataset.</p></li>
+<li><p>Plot in RStudio.</p></li>
+</ol>
+<p>The JellyFish manual: <a href="ftp://ftp.genome.umd.edu/pub/jellyfish/JellyfishUserGuide.pdf" class="uri">ftp://ftp.genome.umd.edu/pub/jellyfish/JellyfishUserGuide.pdf</a> The Khmer manual: <a href="http://khmer.readthedocs.org/en/v1.1" class="uri">http://khmer.readthedocs.org/en/v1.1</a></p>
+<blockquote>
+<p>Step 1: Launch, For this exercise, we will use a m1.large instance.</p>
+</blockquote>
+<blockquote>
+<p>Install other software, including RStudio</p>
+</blockquote>
+<pre><code>sudo apt-get -y install build-essential python python-pip gdebi-core r-base
+curl -LO  https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb
+sudo gdebi -n rstudio-server-1.0.143-amd64.deb</code></pre>
+<blockquote>
+<p>Install Conda, and then the following software.</p>
+</blockquote>
+<pre><code>khmer jellyfish trimmomatic
+</code></pre>
+<blockquote>
+<p>Download data</p>
+</blockquote>
+<pre><code>cd
+curl -L https://s3.amazonaws.com/Mc_Transcriptome/Thomas_McBr1_R1.PF.fastq.gz &gt; kidney.1.fq.gz</code></pre>
+<blockquote>
+<p>Merge –&gt; Trim low quality bases and adapters from dataset –&gt; count kmers –&gt; make a histogram. Normalize in the 2nd command. Make sure you know what is going on here!</p>
+</blockquote>
+<p>::</p>
+<pre><code>trim=2
+norm=30
 
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+#paste the below lines together as 1 command
+
+
+trimmomatic SE -threads 10 kidney.1.fq.gz /dev/stdout \
+ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.38-1/adapters/TruSeq3-PE.fa:2:30:10 \
+SLIDINGWINDOW:4:2 LEADING:2 TRAILING:2 MINLEN:25 \
+| jellyfish count -m 25 -s 700M -t 8 -C -o /dev/stdout /dev/stdin \
+| jellyfish histo /dev/stdin -o trimmed.no.normalize.histo
+
+#and
+
+#paste the below lines together as 1 command
+
+trimmomatic SE -threads 10 kidney.1.fq.gz /dev/stdout \
+ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.38-1/adapters/TruSeq3-PE.fa:2:30:10 \
+SLIDINGWINDOW:4:2 LEADING:2 TRAILING:2 MINLEN:25 \
+| normalize-by-median.py --max-memory-usage 1e9 -C $norm -o - - \
+| jellyfish count -m 25 -s 700M -t 8 -C -o /dev/stdout /dev/stdin \
+| jellyfish histo /dev/stdin -o trimmed.yes.normalize.histo</code></pre>
+<blockquote>
+<p>Now, you have 2 files: <code>trimmed.yes.normalize.histo</code> and <code>trimmed.no.normalize.histo</code>. these contain the kmer frequency data. The 1st column is the abundance, the 2nd column is the number of 25mers that have that abundance. Can you tell me how many unique kmers there are in each dataset? Does this make sense?</p>
+</blockquote>
+<blockquote>
+<p>Launch RStudio, remember you have to make a new password, and find the web address. See lab 2 (blast lab) for details.</p>
+</blockquote>
+<pre><code>install.packages(&quot;beanplot&quot;)
+library(&quot;beanplot&quot;)
+
+#Import all 2 histogram datasets:
+
+
+y_khmer &lt;- read.table(&quot;trimmed.yes.normalize.histo&quot;, quote=&quot;\&quot;&quot;)
+n_khmer &lt;- read.table(&quot;trimmed.no.normalize.histo&quot;, quote=&quot;\&quot;&quot;)
+
+# plot differences between non-unique kmers
+
+par(mfrow=c(2,2))
+
+plot(y_khmer$V2[0:300] - n_khmer$V2[0:300], type=&#39;l&#39;,
+    xlim=c(0,300), xaxs=&quot;i&quot;, yaxs=&quot;i&quot;, frame.plot=F,
+    ylim=c(-20000,20000), col=&#39;red&#39;, xlab=&#39;kmer frequency&#39;,
+    lwd=4, ylab=&#39;count&#39;,
+    main=&#39;Diff in 25mer counts of \n C20 normalized vs. un-normalized datasets&#39;)
+abline(h=0)
+
+plot(y_khmer$V2[0:100], type=&#39;l&#39;,
+      xlim=c(0,100), xaxs=&quot;i&quot;, yaxs=&quot;i&quot;, frame.plot=F,
+      ylim=c(0,180000), col=&#39;red&#39;, xlab=&#39;kmer frequency&#39;,
+      lwd=4, ylab=&#39;count&#39;,
+      main=&#39;Kmer distribution of C20-normalized dataset&#39;)
+
+plot(n_khmer$V2[0:100], type=&#39;l&#39;,
+      xlim=c(0,100), xaxs=&quot;i&quot;, yaxs=&quot;i&quot;, frame.plot=F,
+      ylim=c(0,180000), col=&#39;red&#39;, xlab=&#39;kmer frequency&#39;,
+      lwd=4, ylab=&#39;count&#39;,
+      main=&#39;Kmer distribution of non-normalized dataset&#39;)
+</code></pre>
+<blockquote>
+<p>What do the analyses of kmer counts tell you?</p>
+</blockquote>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+<div id="terminate-your-instance" class="section level2">
+<h2>TERMINATE YOUR INSTANCE</h2>
 </div>
 
 

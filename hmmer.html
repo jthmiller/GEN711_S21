@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>hmmer.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Bioinformatics and Genomics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="labs.html">Lab Materials</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p>Lab4 : HMMER</p>
+<p>During this lab, we will acquaint ourselves with the the software package HMMER. Your objectives are:</p>
+<ul>
+<li></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Familiarize yourself with the software, how to execute it, how to visualize results.</p></li>
+<li><p>Regarding your dataset. Find Channel proteins. Think about how to make a better HMM.</p></li>
+</ol>
+<p>The HMMER manual <a href="ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf">ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf</a></p>
+<p>The HMMER webpage: <a href="http://hmmer.janelia.org/">http://hmmer.janelia.org/</a></p>
+<hr />
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
+<pre><code>ssh -i jetkey username@xxx.xxx.xxx.xxx</code></pre>
+<blockquote>
+<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily.  The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
+</blockquote>
+<pre><code>sudo apt-get update</code></pre>
+<blockquote>
+<p>The upgrade command actually installs any of the required updates.</p>
+</blockquote>
+<pre><code>sudo apt-get -y upgrade</code></pre>
+<blockquote>
+<p>OK, what are these commands?  <code>sudo</code> is the command that tells the computer that we have admin privileges. Try running the commands without the sudo – it will complain that you don’t have admin privileges or something like that. <em>Careful here, using sudo means that you can do something really bad to your own computer – like delete everything</em>, so use with caution. It’s not a big worry when using Jetstream, as this is a virtual machine- fixing your worst mistake is as easy as just terminating the instance and restarting.</p>
+</blockquote>
+<blockquote>
+<p>So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
+</blockquote>
+<pre><code>sudo apt-get -y install build-essential python</code></pre>
+<blockquote>
+<p>Install Conda. Conda is another package manager, but for scientific software. We will use it basically every week!</p>
+</blockquote>
+<pre><code>mkdir anaconda
+cd anaconda
+curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc</code></pre>
+<blockquote>
+<p>Make a conda environment, activate it, and install raxml and mafft. Make sure you know what these software packages are used for.</p>
+</blockquote>
+<pre><code>conda create -y --name gen711
+conda activate gen711
+conda install -y -c bioconda hmmer mafft blast</code></pre>
+<blockquote>
+<p>You will download [1] the mystery dataset which is a transcriptome from a mammal, [2] a dataset that contains only sodium channels, and [3] UNIPROT, a protein reference. Do you remember how to use the <code>curl</code> commands? FYI, I searched for, and downloaded the channel proteins from <a href="http://www.orthodb.org" class="uri">http://www.orthodb.org</a>.</p>
+</blockquote>
+<pre><code>curl -LO https://www.dropbox.com/s/tzreecjs5d5cj6l/channels.fasta
+curl -LO https://www.dropbox.com/s/9kvv4p3x1e3oiju/mystery.fa
+curl -LO ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+gzip -d uniprot_sprot.fasta.gz</code></pre>
+<blockquote>
+<p>we are going to run HMMER to find Channels in our mystery dataset. To do this, we 1st need to make a HMM, which takes as input, aligned protein sequences. We need to do an alignment of the channels proteins that you just downloaded.</p>
+</blockquote>
+<pre><code>mafft --auto --thread 6 channels.fasta &gt; channels.align.fasta</code></pre>
+<blockquote>
+<p>make the HMM using <code>hmmbuild</code>, and then search it using <code>hmmsearch</code></p>
+</blockquote>
+<pre><code>hmmbuild channels.hmm channels.align.fasta
+hmmsearch --cpu 6 -E 1e-5 --domtblout identified_channel_prots.out channels.hmm mystery.fa</code></pre>
+<blockquote>
+<p>look at <code>identified_channel_prots.out</code>. Do you remmeber how to look at files?</p>
+</blockquote>
+<blockquote>
+<p>We’re doing something sorta fancy below…I’m searching the output file made by <code>hmmsearch</code> for the names of the genes it identified, then finding those genes in the mystery dataset, then putting only those sequences into a new file, called <code>maybe-mystery-channels.fasta</code>. The sequences in <code>maybe-mystery-channels.fasta</code> are our putative channel proteins.</p>
+</blockquote>
+<pre><code>cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq | grep --no-group-separator -A1 -w -f - mystery.fa | tee -a maybe-mystery-channels.fasta</code></pre>
+<blockquote>
+<p>I’m don’t the same thing here, but instead of pulling out the things that <em>are</em> channel proteins from the mystery dataset, I’m pulling out the things that are <em>not</em> channel proteins, hopefully. See the <code>-v</code> flag that I passed to <code>grep</code>? What does this do?</p>
+</blockquote>
+<pre><code>cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq | grep -v --no-group-separator -A1 -w -f - mystery.fa | tee -a hopefully-not-channels.fasta</code></pre>
+<blockquote>
+<p>Check to see if the HMM did a good job in finding the channel proteins, by blasting the proteins that HMMscan identified, to the UniProt database.</p>
+</blockquote>
+<pre><code>makeblastdb -in uniprot_sprot.fasta -out uniprot -dbtype prot
+
+blastp -db uniprot -max_target_seqs 1 -query maybe-mystery-channels.fasta \
+-outfmt &#39;6 qseqid evalue stitle&#39; -evalue 1e-20 -num_threads 6 -out sequences-blast-thinks-are-channels_1.out</code></pre>
+<blockquote>
+<p>(Don’t do this, as it takes a long time) You would use the below command to find out if our HMM search had missed any channel proteins. I.e., if there are channel proteins in the <code>hopefully-not-channels.fasta</code> file. What do you predict will happen.</p>
+</blockquote>
+<pre><code>blastp -db uniprot -max_target_seqs 1 -query hopefully-not-channels.fasta \
+-outfmt &#39;6 qseqid evalue stitle&#39; -evalue 1e-20 -num_threads 6 -out sequences-blast-thinks-are-channels_2.out
+</code></pre>
+<blockquote>
+<p>Look at the file, <code>sequences-blast-thinks-are-channels_1.out</code>. Are their things in the 1st file that are not channel proteins (you might have to google)? Why? What can we do to make the results more accurate, if needed?</p>
+</blockquote>
+<blockquote>
+<p>What do you predict will be in the 2nd blast output file? Should there be anything?</p>
+</blockquote>
+<div id="terminate-your-instance." class="section level2">
+<h2>Terminate your instance.</h2>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

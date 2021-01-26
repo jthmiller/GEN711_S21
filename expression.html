@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>expression.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,51 +293,68 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
-
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
-</div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
-</div>
+<p>====================== Lab 9: Gene Expression ======================</p>
+<p>During this lab, we will acquaint ourselves with how to estimate gene expression. You will:</p>
+<blockquote>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a <em>m1.large</em> instance.</p>
+</blockquote>
+<blockquote>
+<p>Update and upgrade your computer like you have every other week. Yes, you may use notes and previous labs..</p>
+</blockquote>
+<blockquote>
+<p>Install Conda like you have every other week!</p>
+</blockquote>
+<blockquote>
+<p>Install the following software packages via Conda like you have every other week: <code>salmon kallisto sra-tools</code></p>
+</blockquote>
+<blockquote>
+<p>Install bashplotlib</p>
+</blockquote>
+<pre><code>conda install -y -c auto bashplotlib</code></pre>
+<blockquote>
+<p>Download data</p>
+</blockquote>
+<pre class="bash"><code>cd
+mkdir $HOME/data
+cd $HOME/data
+curl -LO http://datadryad.org/bitstream/handle/10255/dryad.72141/brain.final.fasta
+curl -LO ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR157/SRR1575395/SRR1575395.sra</code></pre>
+<blockquote>
+<p>Convert SRA format into fastQ (takes a few minutes)</p>
+</blockquote>
+<pre class="bash"><code>cd $HOME/data
+fastq-dump --split-files --split-spot SRR1575395.sra</code></pre>
+<blockquote>
+<p>Use Kallisto to count</p>
+</blockquote>
+<pre class="bash"><code>mkdir $HOME/quant
+cd $HOME/quant
+kallisto index -i transcripts.idx $HOME/data/brain.final.fasta
+kallisto quant -t 10 -i transcripts.idx -o kallisto_output $HOME/data/SRR1575395_1.fastq $HOME/data/SRR1575395_2.fastq</code></pre>
+<blockquote>
+<p>Using Salmon to count</p>
+</blockquote>
+<pre class="bash"><code>cd $HOME/quant
+salmon index -t $HOME/data/brain.final.fasta -i transcripts_index --type quasi -k 31
+salmon quant -p 10 -i transcripts_index --seqBias --gcBias -l a \
+-1 $HOME/data/SRR1575395_1.fastq \
+-2 $HOME/data/SRR1575395_2.fastq -o salmon_output</code></pre>
+<blockquote>
+<p>look at estimates of TPM</p>
+</blockquote>
+<pre class="bash"><code>cd $HOME/quant
+cat salmon_output/quant.sf | sed -e 1d | sort -nk1 &gt; salmon.quant
+cat kallisto_output/abundance.tsv | sed -e 1d | sort -nk1 &gt; kallisto.quant
+paste salmon.quant kallisto.quant  | column -s $&#39;\t&#39; -t | awk &#39;{print $1 &quot;\t&quot; ($4-$10)/((($4+$10)/2)+.001)}&#39; | awk &#39;{print $2}&#39; &gt; expression.diffs</code></pre>
+<blockquote>
+<p>histogram</p>
+</blockquote>
+<pre class="bash"><code>hist -c blue --file expression.diffs -b 50</code></pre>
+<p>======================= TERMINATE YOUR INSTANCE =======================</p>
 
 
 

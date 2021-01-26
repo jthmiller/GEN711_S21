@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>bacterial_assembly.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,86 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
-
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+<div id="lab-9-bacterial-genome-assembly" class="section level2">
+<h2>Lab 9: Bacterial Genome Assembly</h2>
+<blockquote>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.xlarge instance.</p>
+</blockquote>
+<blockquote>
+<p>Update, upgrade, install…</p>
+</blockquote>
+<pre><code>sudo apt-get -y install build-essential python</code></pre>
+<blockquote>
+<p>Install Conda, then the following software..</p>
+</blockquote>
+<pre><code>canu quast spades</code></pre>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+<div id="if-your-last-name-begins-with-a-l-do-this-section.-see-below-for-m-z" class="section level1">
+<h1>If your last name begins with A-L, do this section. See below for M-Z</h1>
+<blockquote>
+<p>Download PacBio Data. This is 25x coverage of an E. coli genome.</p>
+</blockquote>
+<pre><code>cd
+curl -L -o pacbio.fastq http://gembox.cbcb.umd.edu/mhap/raw/ecoli_p6_25x.filtered.fastq
+curl -LO ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz</code></pre>
+<blockquote>
+<p>Assemble with canu (<a href="http://canu.readthedocs.io/en/latest/index.html" class="uri">http://canu.readthedocs.io/en/latest/index.html</a>). Canu is the leading long-read genome assembler as of 2017.</p>
+</blockquote>
+<pre><code>canu \
+ -p ecoli -d ecoli-pacbio \
+ genomeSize=4.8m \
+ -pacbio-raw pacbio.fastq</code></pre>
+<blockquote>
+<p>compare the genomes, using quast</p>
+</blockquote>
+<pre><code>quast ecoli-pacbio/ecoli.contigs.fasta \
+        -R GCF_000005845.2_ASM584v2_genomic.fna.gz \
+        -o quast_output --threads 24 --gene-finding</code></pre>
+</div>
+<div id="last-names-m-z-do-this-section" class="section level1">
+<h1>Last names M-Z, do this section</h1>
+<blockquote>
+<p>Download an Illumina dataset for E. coli, along with a reference genome</p>
+</blockquote>
+<pre><code>cd
+curl -LO https://s3.amazonaws.com/gen711/ecoli_data.tar.gz
+tar -zxf ecoli_data.tar.gz
+curl -LO ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz</code></pre>
+<blockquote>
+<p>Assemble with SPAdes (<a href="http://cab.spbu.ru/software/spades/" class="uri">http://cab.spbu.ru/software/spades/</a>), using a kmer length of 95. This is the genome assembler you will use, if you assemble Illumina data.</p>
+</blockquote>
+<pre><code> spades.py -t 24 -m 55 --mp1-rf -k 95 \
+ --pe1-1 ecoli_pe.1.fq \
+ --pe1-2 ecoli_pe.2.fq \
+ --mp1-1 nextera.1.fq \
+ --mp1-2 nextera.2.fq \
+ -o Ecoli_all_data</code></pre>
+<blockquote>
+<p>compare the genomes, using quast</p>
+</blockquote>
+<pre><code>quast Ecoli_all_data/scaffolds.fasta \
+        -R GCF_000005845.2_ASM584v2_genomic.fna.gz \
+        -o quast_output --threads 24 --gene-finding</code></pre>
+</div>
+<div id="everybody-do-this-section" class="section level1">
+<h1>Everybody do this section</h1>
+<blockquote>
+<p>look at report, found at <code>quast_output/report.txt</code>. How many pieces (contigs) is the genome in? How many should it be, ideally? How many pieces did the other strategy have as a result?</p>
+</blockquote>
+<blockquote>
+<p>Download the full report, with pretty graphics, optional.</p>
+</blockquote>
+<pre><code>scp -ri jetkey username@xxx.xxx.xxx.x:quast_output ~/Downloads</code></pre>
+<blockquote>
+<p>Optional: Polish PacBio assembly using Quiver (<a href="https://github.com/PacificBiosciences/GenomicConsensus" class="uri">https://github.com/PacificBiosciences/GenomicConsensus</a>). This will take more time that we have in lab, but might be a good learning experience.</p>
+</blockquote>
+</div>
+<div id="terminate-your-instance" class="section level1">
+<h1>Terminate your instance</h1>
 </div>
 
 

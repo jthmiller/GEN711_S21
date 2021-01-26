@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>lab_exam2a.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,29 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
-
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+<div id="exam-2---2nd-section" class="section level2">
+<h2>Exam 2 - 2nd section</h2>
+<ol style="list-style-type: decimal">
+<li><p>Launch a m1.xlarge instance. _______ 2 points</p></li>
+<li><p>Update your machine and install the basic software using <code>apt-get</code> as per the genome assembly lab. _________ 2 points</p></li>
+<li><p>Install <code>Linuxbrew</code> and the software as per the genome assembly lab ___________________ 2 points.</p></li>
+<li><p>Download some data _________ 2 points</p></li>
+</ol>
+<pre><code>ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR217/004/ERR2172254/ERR2172254_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR217/004/ERR2172254/ERR2172254_2.fastq.gz</code></pre>
+<p>.. and the reference assembly</p>
+<pre><code>ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/156/755/GCA_000156755.1_ASM15675v1/GCA_000156755.1_ASM15675v1_genomic.fna.gz</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Assembly the Illumina data using the <code>pe</code> (paired-end) data you just downloaded, using SPAdes and 2 different kmers. Use kmers of length <code>79</code> and <code>95</code>. Hint, in the lab we used mate pair data, designated by <code>mp1-1</code> and <code>mp1-2</code>. You do NOT need those parts of the command. Assemblies should take about 5 minutes. ___________________ 4 points</p></li>
+<li><p>Using quast, evaluate each of the the assembled genomes in <code>&lt;&lt;folder_name_from_spades1&gt;&gt;/scaffolds.fasta</code> and <code>&lt;&lt;folder_name_from_spades2&gt;&gt;/scaffolds.fasta</code> and the reference genome you downloaded above (about 4 minutes). Using the <code>report.txt</code> file, just like you did in the lab. Which assembly is better and why? Note, there might be more than 1 right answer, so the justification is very important. ___________________ 8 points</p></li>
+</ol>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+<div id="terminate-your-instance" class="section level1">
+<h1>Terminate your instance!!</h1>
 </div>
 
 

@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>transcriptome.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,57 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
-
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+<div id="lab-10-transcriptome-assembly" class="section level2">
+<h2>Lab 10: Transcriptome Assembly</h2>
+<p>See <a href="http://oyster-river-protocol.readthedocs.io" class="uri">http://oyster-river-protocol.readthedocs.io</a></p>
+<blockquote>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.xlarge instance.</p>
+</blockquote>
+<blockquote>
+<p>Update, upgrade, install…</p>
+</blockquote>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade &amp;&amp; sudo apt-get -y install build-essential git</code></pre>
+<blockquote>
+<p>Install the Oyster River Software</p>
+</blockquote>
+<pre><code>git clone https://github.com/macmanes-lab/Oyster_River_Protocol.git
+cd Oyster_River_Protocol
+make</code></pre>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+<div id="type" class="section level2">
+<h2>Type</h2>
+<pre><code>source ~/.profile</code></pre>
+<blockquote>
+<p>Download Illumina RNAseq data, and subsample it.</p>
+</blockquote>
+<pre><code>cd
+source activate orp_v2
+
+curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
+curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
+seqtk sample -s23 1.subsamp_1.fastq 100000 &gt; reads.1.fq
+seqtk sample -s23 1.subsamp_2.fastq 100000 &gt; reads.2.fq</code></pre>
+<blockquote>
+<p>Edit config.ini</p>
+</blockquote>
+<pre><code>
+sed -i  &quot;s_ubuntu_$(whoami)_g&quot; $HOME/Oyster_River_Protocol/software/config.ini</code></pre>
+<blockquote>
+<p>Assemble using the ORP</p>
+</blockquote>
+<pre><code>$HOME/Oyster_River_Protocol/oyster.mk main \
+MEM=50 \
+CPU=24 \
+READ1=reads.1.fq \
+READ2=reads.2.fq \
+RUNOUT=smallassembly</code></pre>
+</div>
+<div id="terminate-your-instance" class="section level1">
+<h1>Terminate your instance</h1>
 </div>
 
 

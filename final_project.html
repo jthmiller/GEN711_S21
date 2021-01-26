@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>final_project.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,41 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
+<div id="project-tips" class="section level1">
+<h1>Project Tips</h1>
+<p>Here is a list of tips for your project.</p>
+<ol start="0" style="list-style-type: decimal">
+<li><p>Use tmux and suspend your instance when not in use. This will stop us from “paying” for the machine, but will save your work.</p></li>
+<li><p>Likely everybody doing a transcriptome assembly will need to fix the headers in your fastQ files <em>before</em> running in the ORP. This is how. (you’ll need to uncompress the files 1st.)</p></li>
+</ol>
+<pre><code>sed -i &#39;s_ _/1 _&#39; file.1.fq
+sed -i &#39;s_ _/2 _&#39; file.2.fq</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Most people will not need to subsample their read datasets. However, if you have more than 20-40 milloion reads, you probably should. This is how to sample to 20 million reads:</li>
+</ol>
+<pre><code>seqtk sample -s2343 SRRNUMBER_1.fastq.gz 20000000 &gt; reads.1.fq
+seqtk sample -s2343 SRRNUMBER_2.fastq.gz 20000000 &gt; reads.2.fq</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Send me screenshots or text files of error messages.</p></li>
+<li><p>Using tmux</p></li>
+</ol>
+<pre><code># to make a new tmux window
 
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
-</div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+tmux new -s gen711
+
+# you can name your tmux window whataever you want, not just gen711
+
+# to reattach to an existing tmux window, named gen711
+
+tmux at -t gen711
+</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Note that if you are using tmux, and you close/restart your computer, you will be disconnected from your instance. Its ok!! Just reconnect to your instance, then re-attach to your existing tmux window, and you will back to where you left off.</li>
+</ol>
 </div>
 
 

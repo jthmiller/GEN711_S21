@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>mapping.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,50 +293,79 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
+<div id="week-6-read-mapping" class="section level2">
+<h2>Week 6: Read Mapping</h2>
+<p>During this lab, we will acquaint ourselves with read mapping. You will:</p>
+<ol style="list-style-type: decimal">
+<li><p>Install software and download data</p></li>
+<li><p>Map reads to dataset</p></li>
+<li><p>look at mapping quality</p></li>
+</ol>
+<p>The STAR manuscript: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23104886" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/23104886</a> The STAR manual: <a href="https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf" class="uri">https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf</a></p>
+<blockquote>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a <em>m1.Xlarge</em> instance.</p>
+</blockquote>
+<pre><code>ssh -i jetkey username@xxx.xxx.xxx.xxx</code></pre>
+<blockquote>
+<p>Update and upgrade your computer like you have every other week. Yes, you may use notes and pervious labs..</p>
+</blockquote>
+<blockquote>
+<p>Install the following…</p>
+</blockquote>
+<pre><code>sudo apt-get -y install build-essential python</code></pre>
+<blockquote>
+<p>Install Conda like you have every other week!</p>
+</blockquote>
+<blockquote>
+<p>Install the following software packages via Conda like you have every other week: <code>samtools bedtools star bcftools vcftools sra-tools</code></p>
+</blockquote>
+<blockquote>
+<p>Download data</p>
+</blockquote>
+<pre class="bash"><code>cd
+curl -LO ftp://ftp.ensemblgenomes.org/pub/metazoa/release-40/fasta/danaus_plexippus/dna/Danaus_plexippus.Dpv3.dna.toplevel.fa.gz
+curl -LO https://s3.amazonaws.com/gen711/SRR585568_R1.fastq.gz
+curl -LO https://s3.amazonaws.com/gen711/SRR585568_R2.fastq.gz
+gzip -d *gz
+</code></pre>
+<blockquote>
+<p>Index the genome</p>
+</blockquote>
+<pre class="bash"><code>mkdir butterfly
 
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+STAR --runMode genomeGenerate --genomeDir $HOME/butterfly \
+--genomeFastaFiles $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa \
+--runThreadN 24</code></pre>
+<blockquote>
+<p>Map reads!! (10 minutes). You’re mapping RNA data, from a mosquito antenna to the mosquito genome.</p>
+</blockquote>
+<pre class="bash"><code>STAR --runMode alignReads \
+--genomeDir butterfly/ \
+--readFilesIn $HOME/SRR585568_R1.fastq $HOME/SRR585568_R2.fastq \
+--runThreadN 18 \
+--outSAMtype BAM SortedByCoordinate \
+--outFileNamePrefix monarch_mapping_</code></pre>
+<blockquote>
+<p>Let’s find SNPs, but just on the largest scaffold.</p>
+</blockquote>
+<pre class="bash"><code>samtools view -h -t  $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 monarch_mapping_Aligned.sortedByCoord.out.bam \
+| awk &#39;$1 ~ &quot;@&quot; || $3==&quot;DPSCF300001&quot;&#39; \
+| samtools view -h -t  $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 -1 -o filtered.bam -
+
+
+bcftools mpileup --skip-indels -f $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa filtered.bam | \
+bcftools view -O v --threads 24 -v snps - &gt; variants.vcf</code></pre>
+<blockquote>
+<p>look at your vcf file. If we had mapped many individuals, we could calculate many interesting population genetics stats using the <code>vcftools</code> package.</p>
+</blockquote>
+<pre class="bash"><code>less -S variants.vcf</code></pre>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://macmanes.github.io/GEN711_S21/">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+<div id="terminate-your-instance" class="section level1">
+<h1>TERMINATE YOUR INSTANCE</h1>
 </div>
 
 
