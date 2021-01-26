@@ -1,0 +1,16 @@
+
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "Bioinformatics and Genomics"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Lab Materials"
+      href: labs.html
+    - text: "Syllabus"
+      href: syllabus.html
+output:
+  html_document:
+    theme: flatly
+    css: style.css

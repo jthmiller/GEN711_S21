@@ -1,0 +1,55 @@
+---
+title:
+output: 
+  html_document:
+    includes:
+       in_header: googleAnalytics.Rhtml
+---
+
+<img src="pic/pic2.jpeg" style="float: left; width: 100%; margin-bottom: 2em;">
+
+
+</script>
+<div class="row">
+<div class="col-xs-12 col-sm-12 text-left">
+
+***
+</script>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-5 text-center">
+<br/>
+<img src="pic/pic1.jpeg" style="width:400px;" align = "top"/> 
+</div>
+<div class="col-xs-12 col-sm-7">
+<br/>
+
+
+# __Genetics 711/811__<br/>
+Contact Information for Prof. Matthew MacManes:<br/>
+Office: 434 Gregg Hall<br/>
+Email: Matthew.MacManes@unh.edu <br/>
+Office hours: Monday 8-9AM in 434 Gregg, or by appt. <br/>
+Schedule at (http://genomebio.org/office-hours/)<br/>
+<br/>
+Contact Information for TA Dani Blumstein:<br/>
+Office: 430 Gregg Hall<br/>
+Email: dmb1086@wildcats.unh.edu <br/>
+Office hours: Wednesday 11-12AM in 430 Gregg, or by appt.
+
+<br/>
+<br/>
+- [Class Zoom link](https://unh.zoom.us/j/91624774331?pwd=MGhFS3Y3YzRrVmxRSVZ1NzJDd2l5UT09)
+<br/>
+- [Class slack channel](https://gen711f18.slack.com/)
+</div>
+
+<br/>
+MWF 10:10-11:00PM Gregg 110<br/>
+Monday class will be in person for those who want this.<br/>
+<br/>
+Friday 3:10-5:00PM Kingsbury N134
+Will be in person for 11 people (which 11, TBD)<br/>
+
+
+
