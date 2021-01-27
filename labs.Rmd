@@ -42,7 +42,7 @@ __Week 1__</br>
 
 - [Canvas](https://mycourses.unh.edu)
 
-- [Github](https://macmanes.github.io/GEN711_S21/)
+- [Github](https://github.com/macmanes/GEN711_S21)
 
 - [Summer Workshops](http://angus.readthedocs.org/en/2014)
 
