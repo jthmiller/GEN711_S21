@@ -39,9 +39,9 @@ Office: 430 Gregg Hall<br/>
 Email: dmb1086@wildcats.unh.edu <br/>
 Office hours: Wednesday 11-12AM in 430 Gregg, or by appt.
 </div>
-<br/>
-[Class slack channel](https://gen711s21.slack.com/join/invite/enQtMTY3ODMwNDM3ODE5NC0xZGQ1NTEwYzZkZWY5MzgwYTMzMWI0ZDkxNWIzODkwM2QwYzQ0NzYwYTUwMzk2YTBjMjQzMTgzYzE5Mjc0NGUz#/credentials) Email Dani if link doesn't work <br/>
-[Syllabus](Gen711_2021_syllabus for website.pdf)
+[Class slack channel](https://join.slack.com/t/gen711s21/shared_invite/zt-lhty8d0k-7BGaCR7j5pd7pnNQ3ihD0g) Email Dani if link doesn't work <br/>
+[Syllabus](Gen711_2021_syllabus.pdf)<br/>
+[Canvas with zoom links](https://mycourses.unh.edu)
 
 <br/>
 MWF 10:10-11:00PM Gregg 110<br/>
