@@ -24,6 +24,15 @@
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -68,6 +77,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -326,8 +336,8 @@ h4.date { /* Header 4 - and the author and data headers use this too  */
 <hr />
 <div id="lab-schedule" class="section level3">
 <h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<hr />
+<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - Download putty terminal (for windows machines only!) <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
+<p><strong>Week 2</strong></br> - Log in to <a href="https://use.jetstream-cloud.org/">Jetstream</a>. Here is some <a href="https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview">info about it</a>.</br> - <a href="usingssh.html">Setting up your Jetstream VM</a></br> - <a href="jetstream.html">Launch a Jetstream instance</a></br> - <a href="connect.html">Connect to a Jetstream instance</a></br></p>
 </div>
 <div id="additional-resources" class="section level3">
 <h3><strong>ADDITIONAL RESOURCES:</strong></h3>
@@ -349,7 +359,7 @@ h4.date { /* Header 4 - and the author and data headers use this too  */
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
