@@ -4,17 +4,13 @@ Using SSH to connect to your Jetstream instance
 
 ### Before you launch an instance, go to PuTTygen
 
-```
 <img src="pics/puttygen.JPG" class="img-responsive" alt="">
-```
 
 ## Select generate and move your mouse over the putty window to make it load faster
 ## Once the key is generated you should see it in the box (highlited in blue in the picture below)
 ## Highlight and copy the key
 
-```
 <img src="pics/key.JPG" class="img-responsive" alt="">
-```
 
 ## Navigate to the Jetstream page, and log in
 
