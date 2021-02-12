@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="" />
 
 
-<title>GEN 711 Lab</title>
+<title>usingsshwindows.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -304,50 +303,50 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GEN 711 Lab</h1>
-<h4 class="date">Spring 2021</h4>
 
 </div>
 
 
-<style type="text/css">
-
-h1.title {
-  font-size: 45px;
-  color: Black;
-  text-align: center;
-}
-h4.author { /* Header 4 - and the author and data headers use this too  */
-    font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-}
-h4.date { /* Header 4 - and the author and data headers use this too  */
-  font-size: 18px;
-  font-family: "Lucida Console", monospace;
-  color: Black;
-  text-align: center;
-</style>
-</script>
-<div class="row">
-<div class="col-xs-12 col-sm-9 text-left">
-<p><br/></p>
-<hr />
-<div id="lab-schedule" class="section level3">
-<h3><strong>Lab Schedule</strong></h3>
-<p><strong>Week 1</strong></br> - Sign up for an XSEDE account <a href="https://www.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_58_struts_action=%2Flogin%2Fcreate_account">here</a></br> - Download putty terminal (for windows machines only!) <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">here</a></br> - <a href="http://rik.smith-unna.com/command_line_bootcamp/">Command line bootcamp</a>: You can (and should) be working on this from you personal laptop.</br></p>
-<p><strong>Week 2</strong></br> - Log in to <a href="https://use.jetstream-cloud.org/">Jetstream</a>. Here is some <a href="https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview">info about it</a>.</br> - <a href="usingssh.html">Setting up your Jetstream VM</a> for mac users</br> - <a href="usingssh_windows.html">Setting up your Jetstream VM</a> for windows users</br> - <a href="jetstream.html">Launch a Jetstream instance</a></br> - <a href="connect.html">Connect to a Jetstream instance</a></br></p>
+<div id="using-ssh-to-connect-to-your-jetstream-instance" class="section level2">
+<h2>Using SSH to connect to your Jetstream instance</h2>
+<div id="before-you-launch-an-instance-go-to-your-terminal-and-type." class="section level3">
+<h3>Before you launch an instance, go to your terminal and type.</h3>
+<pre><code>ssh-keygen -t rsa -f $HOME/jetkey</code></pre>
 </div>
-<div id="additional-resources" class="section level3">
-<h3><strong>ADDITIONAL RESOURCES:</strong></h3>
-<ul>
-<li><p><a href="https://mycourses.unh.edu">Canvas</a></p></li>
-<li><p><a href="https://github.com/macmanes/GEN711_S21">Github</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2014">Summer Workshops</a></p></li>
-<li><p><a href="http://angus.readthedocs.org/en/2015">More Summer Workshops</a></p></li>
-<li><p><a href="https://open.oregonstate.education/computationalbiology/">Helpful online book</a></p></li>
-</ul>
+</div>
+<div id="something-will-happen-and-it-will-ask-you-for-a-password---this-can-be-simple-like-password." class="section level2">
+<h2>Something will happen, and it will ask you for a password - this can be simple (like “password”).</h2>
+<p>After this is done, some stuff will happen (it will look kinda like a techie picture for you, like a diagonal rabbit head).</p>
+<pre><code>more $HOME/jetkey.pub | cut -d &quot; &quot; -f1-2 | pbcopy</code></pre>
+</div>
+<div id="navigate-to-the-jetstream-page-and-log-in" class="section level2">
+<h2>Navigate to the Jetstream page, and log in</h2>
+<p>Navigate to <a href="https://use.jetstream-cloud.org/" class="uri">https://use.jetstream-cloud.org/</a></p>
+<p><img src="pics/one.png" class="img-responsive" alt=""></p>
+<div id="login-using-your-xsede-credentials" class="section level3">
+<h3>Login using your XSEDE credentials</h3>
+<p><img src="pics/two.png" class="img-responsive" alt=""></p>
+</div>
+<div id="type-your-stuff-in-and-select-sign-in" class="section level3">
+<h3>Type your stuff in, and select “SIGN IN”</h3>
+<p><img src="pics/three.png" class="img-responsive" alt=""></p>
+</div>
+<div id="to-go-to-settings-click-on-your-user-name." class="section level3">
+<h3>To go to settings, click on your user name.</h3>
+<p><img src="pics/twelve.png" class="img-responsive" alt=""></p>
+</div>
+</div>
+<div id="click-show-more" class="section level2">
+<h2>Click “Show More”</h2>
+<p><img src="pics/thirteen.png" class="img-responsive" alt=""></p>
+</div>
+<div id="click-plus-sign-enter-details" class="section level2">
+<h2>Click “plus sign”, enter details</h2>
+<p>Name the key “jetkey”, and paste in key using <code>command-v</code> (I sneakily copied the key, above, using the <code>pbcopy</code> command). then click confirm.</p>
+<p><img src="pics/fourteen.png" class="img-responsive" alt=""></p>
+<div id="if-you-sit-at-the-same-computer-each-time-or-use-your-personal-laptop-you-should-not-need-to-make-a-new-key-again." class="section level3">
+<h3>If you sit at the same computer each time, or use your personal laptop, you <em>should</em> not need to make a new key again.</h3>
+</div>
 </div>
 
 

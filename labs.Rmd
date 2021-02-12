@@ -39,7 +39,8 @@ __Week 1__</br>
 
 __Week 2__</br>
 - Log in to [Jetstream](https://use.jetstream-cloud.org/). Here is some [info about it](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview).</br>
-- [Setting up your Jetstream VM](usingssh.html)</br>
+- [Setting up your Jetstream VM](usingssh.html) for mac users</br>
+- [Setting up your Jetstream VM](usingssh_windows.html) for windows users</br>
 - [Launch a Jetstream instance](jetstream.html)</br>
 - [Connect to a Jetstream instance](connect.html)</br>
 
