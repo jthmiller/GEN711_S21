@@ -1,6 +1,11 @@
 Using SSH to connect to your Jetstream instance
 ---
 
+At 3:09 you can jump ahead to 9:20 if you don't want to sit and watch the instance deploy 
+<center>
+<video width=100% height="500" controls>
+  <source src="pics/zoom_0.mp4" type="video/mp4">
+</video>
 
 ### Before you launch an instance, go to PuTTygen
 
