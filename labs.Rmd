@@ -44,6 +44,9 @@ __Week 2__</br>
 - [Launch a Jetstream instance](jetstream.html)</br>
 - [Connect to a Jetstream instance](connect.html)</br>
 
+__Week 3__</br>
+- [Command Line BLAST](lab1_blast.html)</br>
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)
