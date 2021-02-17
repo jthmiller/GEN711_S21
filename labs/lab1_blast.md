@@ -45,8 +45,8 @@ sudo apt-get -y install build-essential python python-pip gdebi-core r-base git
 ```
 mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo ". $HOME/anaconda/install/etc/profile.d/conda.sh" >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -115,8 +115,8 @@ grep -i SCN5A blast.out
 > Download and install RStudio
 
 ```
-curl -LO  https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
-sudo gdebi -n rstudio-server-1.1.456-amd64.deb
+curl -LO  https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.4.1103-amd64.deb
+sudo gdebi -n rstudio-1.4.1103-amd64.deb
 ```
 
 > Find out the web address of your server. Paste the web address that comes up on the terminal, in to your browser.
