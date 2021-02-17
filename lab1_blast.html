@@ -309,140 +309,81 @@ $(document).ready(function () {
 
 <div id="lab-2-blast" class="section level2">
 <h2>Lab 2: BLAST</h2>
-<p>During this lab, we will acquaint ourselves with the the software package BLAST. Your objectives are:</p>
+<p>During this lab, we will acquaint ourselves with the the software package BLAST. Your objectives are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Familiarize yourself with the software, how to execute it, how to visualize results.</p></li>
 <li><p>Regarding your dataset, tell me how some of these genes are related to their homologous copies.</p></li>
 </ol>
-<blockquote>
-<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
-</blockquote>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
 <pre><code>ssh -i jetkey username@xxx.xxx.xxx.xxx</code></pre>
-<blockquote>
-<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily.  The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
-</blockquote>
+<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily. The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
 <pre><code>sudo apt-get update</code></pre>
-<blockquote>
 <p>The upgrade command actually installs any of the required updates.</p>
-</blockquote>
 <pre><code>sudo apt-get -y upgrade</code></pre>
-<blockquote>
-<p>OK, what are these commands?  <code>sudo</code> is the command that tells the computer that we have admin privileges. Try running the commands without the sudo – it will complain that you don’t have admin privileges or something like that. <em>Careful here, using sudo means that you can do something really bad to your own computer – like delete everything</em>, so use with caution. It’s not a big worry when using Jetstream, as this is a virtual machine- fixing your worst mistake is as easy as just terminating the instance and restarting.</p>
-</blockquote>
-<blockquote>
+<p>OK, what are these commands? <code>sudo</code> is the command that tells the computer that we have admin privileges. Try running the commands without the sudo – it will complain that you don’t have admin privileges or something like that. <em>Careful here, using sudo means that you can do something really bad to your own computer – like delete everything</em>, so use with caution. It’s not a big worry when using Jetstream, as this is a virtual machine- fixing your worst mistake is as easy as just terminating the instance and restarting.</p>
 <p>So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
-</blockquote>
-<pre><code>
-
-sudo apt-get -y install build-essential python python-pip gdebi-core r-base git</code></pre>
-<blockquote>
+<pre><code>sudo apt-get -y install build-essential python python-pip gdebi-core r-base git</code></pre>
 <p>Install Conda. Conda is another package manager, but for scientific software. We will use it basically every week!</p>
-</blockquote>
 <pre><code>mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
-<blockquote>
 <p>Make a conda environment, activate it, and install BLAST.</p>
-</blockquote>
 <pre><code>conda create -y --name gen711
 conda activate gen711
 conda install -y -c bioconda blast</code></pre>
-<blockquote>
 <p>To get a feel for the different options, type <code>blastp -help</code>. Which type of blast does this correspond to? Look at the help info for blastp and tblastx. There are A LOT of options, most of which you will be able to safely ignore. One of the challenges of bioinformatics is knowing about the options and which ones you can safely ignore, and which ones are important.</p>
-</blockquote>
 </div>
 <div id="challenge" class="section level2">
 <h2>Challenge…</h2>
-<blockquote>
-<p>You have just returned from South America, where you captured a rare - never been seen before - desert mouse. You are interested in knowing how it survives, and start by trying to identify the Sodium transport genes, in particular a gene called Scn5a (<a href="https://en.wikipedia.org/wiki/Nav1.5" class="uri">https://en.wikipedia.org/wiki/Nav1.5</a>). You’ve just had the animals’ transcriptome sequenced, and are about to begin the search!! You <em>could</em> use web blast like you’ve done in the past, but there are 20166 new sequences that you need to search and that would take a loooooooong time.</p>
-</blockquote>
-<blockquote>
-<p>Download the data that you just generated, using this command:</p>
-</blockquote>
+<p>You have just returned from South America, where you captured a rare - never been seen before - desert mouse. You are interested in knowing how it survives, and start by trying to identify the Sodium transport genes, in particular a gene called Scn5a (<a href="https://en.wikipedia.org/wiki/Nav1.5" class="uri">https://en.wikipedia.org/wiki/Nav1.5</a>). You’ve just had the animals’ transcriptome sequenced, and are about to begin the search!! You <em>could</em> use web blast like you’ve done in the past, but there are 20166 new sequences that you need to search and that would take a loooooooong time. Download the data that you just generated, using this command:</p>
 <pre><code>cd $HOME
 curl -LO https://s3.amazonaws.com/macmanes_share/transcripts.fasta</code></pre>
-<blockquote>
 <p>You know that the model organism, the lab mouse, has an excellent genome, and is probably closely related to the mystery mouse, You decide to use it to help identify the sodium transport genes in the new animal. Download the data:</p>
-</blockquote>
 <pre><code>curl -LO ftp://ftp.ensembl.org/pub/release-85/fasta/mus_musculus/cdna/Mus_musculus.GRCm38.cdna.all.fa.gz
 gzip -d Mus_musculus.GRCm38.cdna.all.fa.gz</code></pre>
 <div id="ok-lets-do-some-blasting.." class="section level4">
 <h4>OK, let’s do some blasting..</h4>
-<blockquote>
 <p>1st step is to make the blast database</p>
-</blockquote>
 <pre><code>makeblastdb -in Mus_musculus.GRCm38.cdna.all.fa -out mus -dbtype nucl</code></pre>
-<blockquote>
 <p>Now blast.. your results should be saved in a file called <code>blast.out</code></p>
-</blockquote>
 <pre><code>blastn -db mus -max_target_seqs 1 -query transcripts.fasta \
 -outfmt &#39;6 qseqid qlen length pident gaps evalue stitle&#39; -evalue 1e-10 -num_threads 6 -out blast.out</code></pre>
-<blockquote>
 <p>look at <code>blast.out</code>. the 1st column is the ID of the desert mouse transcript, the 2nd column is the e-value (a statistic related to how good the match between query and reference sequences is - smaller numbers better. The 3rd column is the Mouse transcript match descriptor)</p>
-</blockquote>
 <pre><code>less -S blast.out
-
 # type `q` to get out of this screen.</code></pre>
-<blockquote>
 <p>Oh crap.. There are 16501 lines in that file, how are we going to find the Scn5a gene that we are looking for?? Meet <code>grep</code>.</p>
-</blockquote>
 <pre><code>grep -i SCN5A blast.out</code></pre>
 </div>
 </div>
 <div id="visualize-blast-results" class="section level2">
 <h2>Visualize blast results…</h2>
-<blockquote>
 <p>Download and install RStudio</p>
-</blockquote>
-<pre><code>curl -LO  https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
-sudo gdebi -n rstudio-server-1.1.456-amd64.deb</code></pre>
-<blockquote>
+<pre><code>curl -LO  https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.4.1103-amd64.deb
+sudo gdebi -n rstudio-1.4.1103-amd64.deb</code></pre>
 <p>Find out the web address of your server. Paste the web address that comes up on the terminal, in to your browser.</p>
-</blockquote>
 <pre><code>echo My RStudio Web server is running at: http://$(hostname):8787/</code></pre>
-<blockquote>
 <p>Make a password (make it an easy one!!!)</p>
-</blockquote>
 <pre><code>sudo passwd $(whoami)</code></pre>
-<blockquote>
-<p>Note that the text will not echo to the screen (because it’s a password!)</p>
-</blockquote>
-<blockquote>
-<p>Return to the browser login page and enter your new password. Note this will not change the global XSEDE login info (i.e. it only affects this instance).</p>
-</blockquote>
-<blockquote>
-<p>Once R is up and running, we’ll give you a quick tour of the RStudio Web interface for those of you who haven’t seen it.</p>
-</blockquote>
+<p>Note that the text will not echo to the screen (because it’s a password!) Return to the browser login page and enter your new password. Note this will not change the global XSEDE login info (i.e. it only affects this instance). Once R is up and running, we’ll give you a quick tour of the RStudio Web interface for those of you who haven’t seen it.</p>
 <div id="in-rstudio-in-your-browser-not-the-terminal" class="section level4">
 <h4>in RStudio in your browser (not the terminal)</h4>
-<blockquote>
 <p>Install packages and read in the results file you just made.</p>
-</blockquote>
 <pre><code>install.packages(c(&quot;readr&quot;, &quot;beanplot&quot;))
 library(&quot;readr&quot;)
 library(&quot;beanplot&quot;)
-
 blast &lt;- read_delim(&quot;~/blast.out&quot;, &quot;\t&quot;,
     escape_double = FALSE, col_names = FALSE,
     trim_ws = TRUE)
-
-View(blast)
-</code></pre>
-<blockquote>
+View(blast)</code></pre>
 <p>look at the results!!!</p>
-</blockquote>
 <pre><code>par(mfrow = c(2,2))
 barplot(mean(blast$X3/blast$X2), main=&#39;A barplot&#39;, ylab=&quot;Percent Aligned&quot;)
-
 boxplot(blast$X3/blast$X2, frame.plot=F, main=&#39;A boxplot&#39;, ylab=&quot;Percent Aligned&quot;)
-
 beanplot(blast$X3/blast$X2, ll = 0, beanlinewd=-1, frame.plot=F, col=&quot;blue&quot;, main=&#39;A violin plot&#39;, ylab=&quot;Percent Aligned&quot;)
-
-plot(blast$X3/blast$X2 ~ blast$X6, xlim=c(7e-11, 0), col=&#39;red&#39;,frame.plot=F, ylab=&quot;Percent Aligned&quot;, xlab=&#39;evalue&#39;, main=&quot;Evalue vs Percent Aligned&quot;)
-</code></pre>
+plot(blast$X3/blast$X2 ~ blast$X6, xlim=c(7e-11, 0), col=&#39;red&#39;,frame.plot=F, ylab=&quot;Percent Aligned&quot;, xlab=&#39;evalue&#39;, main=&quot;Evalue vs Percent Aligned&quot;)</code></pre>
 <p>This lab uses code from ANGUS2017: <a href="https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html" class="uri">https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html</a></p>
 </div>
 </div>
