@@ -322,7 +322,7 @@ $(document).ready(function () {
 <pre><code>sudo apt-get -y upgrade</code></pre>
 <p>OK, what are these commands? <code>sudo</code> is the command that tells the computer that we have admin privileges. Try running the commands without the sudo – it will complain that you don’t have admin privileges or something like that. <em>Careful here, using sudo means that you can do something really bad to your own computer – like delete everything</em>, so use with caution. It’s not a big worry when using Jetstream, as this is a virtual machine- fixing your worst mistake is as easy as just terminating the instance and restarting.</p>
 <p>So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
-<pre><code>sudo apt-get -y install build-essential python python-pip gdebi-core r-base git</code></pre>
+<pre><code>sudo apt-get -y install build-essential python python3-pip gdebi-core r-base git</code></pre>
 <p>Install Conda. Conda is another package manager, but for scientific software. We will use it basically every week!</p>
 <pre><code>mkdir anaconda
 cd anaconda
@@ -349,8 +349,7 @@ gzip -d Mus_musculus.GRCm38.cdna.all.fa.gz</code></pre>
 <p>1st step is to make the blast database</p>
 <pre><code>makeblastdb -in Mus_musculus.GRCm38.cdna.all.fa -out mus -dbtype nucl</code></pre>
 <p>Now blast.. your results should be saved in a file called <code>blast.out</code></p>
-<pre><code>blastn -db mus -max_target_seqs 1 -query transcripts.fasta \
--outfmt &#39;6 qseqid qlen length pident gaps evalue stitle&#39; -evalue 1e-10 -num_threads 6 -out blast.out</code></pre>
+<pre><code>blastn -db mus -max_target_seqs 1 -query transcripts.fasta \ -outfmt &#39;6 qseqid qlen length pident gaps evalue stitle&#39; -evalue 1e-10 -num_threads 6 -out blast.out</code></pre>
 <p>look at <code>blast.out</code>. the 1st column is the ID of the desert mouse transcript, the 2nd column is the e-value (a statistic related to how good the match between query and reference sequences is - smaller numbers better. The 3rd column is the Mouse transcript match descriptor)</p>
 <pre><code>less -S blast.out
 # type `q` to get out of this screen.</code></pre>

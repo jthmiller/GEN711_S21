@@ -29,7 +29,7 @@ OK, what are these commands?  `sudo` is the command that tells the computer that
 
 So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the `update` or `upgrade` command, we're using `install`. EASY!!
 ```
-sudo apt-get -y install build-essential python python-pip gdebi-core r-base git
+sudo apt-get -y install build-essential python python3-pip gdebi-core r-base git
 ```
 
 
@@ -76,8 +76,7 @@ makeblastdb -in Mus_musculus.GRCm38.cdna.all.fa -out mus -dbtype nucl
 
 Now blast.. your results should be saved in a file called `blast.out`
 ```
-blastn -db mus -max_target_seqs 1 -query transcripts.fasta \
--outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
+blastn -db mus -max_target_seqs 1 -query transcripts.fasta \ -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
 ```
 
 
