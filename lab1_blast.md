@@ -11,7 +11,7 @@ During this lab, we will acquaint ourselves with the the software package BLAST.
 
 Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.
 ```
-ssh -i jetkey username@xxx.xxx.xxx.xxx
+ssh -i $HOME/jetkey username@xxx.xxx.xxx.xxx
 ```
 
 The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily.  The command `sudo apt-get update` checks a server for updates to existing software.
@@ -29,7 +29,7 @@ OK, what are these commands?  `sudo` is the command that tells the computer that
 
 So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the `update` or `upgrade` command, we're using `install`. EASY!!
 ```
-sudo apt-get -y install build-essential python python3-pip gdebi-core r-base git
+sudo apt-get -y install build-essential python3 gdebi-core r-base git libssl-dev
 ```
 
 
@@ -76,7 +76,7 @@ makeblastdb -in Mus_musculus.GRCm38.cdna.all.fa -out mus -dbtype nucl
 
 Now blast.. your results should be saved in a file called `blast.out`
 ```
-blastn -db mus -max_target_seqs 1 -query transcripts.fasta \ -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
+blastn -db mus -max_target_seqs 1 -query transcripts.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
 ```
 
 
@@ -95,14 +95,13 @@ grep -i SCN5A blast.out
 
 Download and install RStudio
 ```
-curl -LO  https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.4.1103-amd64.deb
-sudo gdebi -n rstudio-1.4.1103-amd64.deb
+curl -LO  https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1103-amd64.deb
+sudo gdebi -n rstudio-server-1.4.1103-amd64.deb
 ```
 
 Find out the web address of your server. Paste the web address that comes up on the terminal, in to your browser.
 ```
-echo My RStudio Web server is running at: http://$(hostname):8787/
-```
+printf "\n\n\nMy RStudio Web server is running at: http://$(curl ifconfig.me):8787/\n\n\n"
 
 Make a password (make it an easy one!!!)
 ```
