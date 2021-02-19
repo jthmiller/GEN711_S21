@@ -102,6 +102,7 @@ sudo gdebi -n rstudio-server-1.4.1103-amd64.deb
 Find out the web address of your server. Paste the web address that comes up on the terminal, in to your browser.
 ```
 printf "\n\n\nMy RStudio Web server is running at: http://$(curl ifconfig.me):8787/\n\n\n"
+```
 
 Make a password (make it an easy one!!!)
 ```
