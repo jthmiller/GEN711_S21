@@ -47,6 +47,9 @@ __Week 2__</br>
 __Week 3__</br>
 - [Command Line BLAST](lab1_blast.html)</br>
 
+__Week 4__</br>
+- [Use a HMM to identify unknown sequences](hmmer.html)</br>
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)
