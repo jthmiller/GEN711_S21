@@ -1,8 +1,7 @@
 Lab4 : HMMER
+--
 
-During this lab, we will acquaint ourselves with the the software package HMMER. Your objectives are:
-
--
+During this lab, we will acquaint ourselves with the software package HMMER. Your objectives are:
 
 1. Familiarize yourself with the software, how to execute it, how to visualize results.
 
