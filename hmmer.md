@@ -89,13 +89,19 @@ hmmsearch --cpu 6 -E 1e-5 --domtblout identified_channel_prots.out channels.hmm 
 > We're doing something sorta fancy below...I'm searching the output file made by `hmmsearch` for the names of the genes it identified, then finding those genes in the mystery dataset, then putting only those sequences into a new file, called `maybe-mystery-channels.fasta`. The sequences in `maybe-mystery-channels.fasta` are our putative channel proteins.
 
 ```
-cat identified_channel_prots.out | cut -d " " -f1 | grep ENS | sort | uniq | grep --no-group-separator -A1 -w -f - mystery.fa | tee -a maybe-mystery-channels.fasta
+cat identified_channel_prots.out | cut -d " " -f1 | grep ENS | sort | uniq \
+| grep --no-group-separator -A1 -w -f - mystery.fa \
+| tee -a maybe-mystery-channels.fasta
 ```
 
 > I'm don't the same thing here, but instead of pulling out the things that _are_ channel proteins from the mystery dataset, I'm pulling out the things that are _not_ channel proteins, hopefully. See the `-v` flag that I passed to `grep`? What does this do?
 
 ```
-cat identified_channel_prots.out | cut -d " " -f1 | grep ENS | sort | uniq | grep -v --no-group-separator -A1 -w -f - mystery.fa | tee -a hopefully-not-channels.fasta
+time cat identified_channel_prots.out | cut -d " " -f1 | grep ENS | sort | uniq \
+| grep -v --no-group-separator  -w -f - mystery.fa | grep  ">" \
+| cut -d " " -f1 | sed 's_>__' \
+| grep  --no-group-separator -A1 -w -f - mystery.fa \
+| tee -a hopefully-not-channels.fasta
 ```
 
 > Check to see if the HMM did a good job in finding the channel proteins, by blasting the proteins that HMMscan identified, to the UniProt database.
