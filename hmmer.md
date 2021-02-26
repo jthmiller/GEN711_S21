@@ -13,7 +13,7 @@ The HMMER webpage: <a href="http://hmmer.janelia.org/">http://hmmer.janelia.org
 
 ---
 
- Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.
+Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance You do this command only if you are using a Linux or Mac computer. For Windows users this command is replaced by the stuff you do in Putty. 
 
 ```
 ssh -i jetkey username@xxx.xxx.xxx.xxx
@@ -47,8 +47,8 @@ sudo apt-get -y install build-essential python
 ```
 mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo ". $HOME/anaconda/install/etc/profile.d/conda.sh" >> ~/.bashrc
 source ~/.bashrc
 ```
