@@ -314,10 +314,10 @@ $(document).ready(function () {
 <li><p>Familiarize yourself with the software, how to execute it, how to visualize results.</p></li>
 <li><p>Regarding your dataset. Find Channel proteins. Think about how to make a better HMM.</p></li>
 </ol>
-<p>The HMMER manual <a href="ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf">ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf</a></p>
+<p>The HMMER manual <a href="http://eddylab.org/software/hmmer/Userguide.pdf">http://eddylab.org/software/hmmer/Userguide.pdf</a></p>
 <p>The HMMER webpage: <a href="http://hmmer.janelia.org/">http://hmmer.janelia.org/</a></p>
 <hr />
-<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance You do this command only if you are using a Linux or Mac computer. For Windows users this command is replaced by the stuff you do in Putty.</p>
 <pre><code>ssh -i jetkey username@xxx.xxx.xxx.xxx</code></pre>
 <blockquote>
 <p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily.  The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
@@ -339,8 +339,8 @@ $(document).ready(function () {
 </blockquote>
 <pre><code>mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 <blockquote>
@@ -371,11 +371,17 @@ hmmsearch --cpu 6 -E 1e-5 --domtblout identified_channel_prots.out channels.hmm 
 <blockquote>
 <p>We’re doing something sorta fancy below…I’m searching the output file made by <code>hmmsearch</code> for the names of the genes it identified, then finding those genes in the mystery dataset, then putting only those sequences into a new file, called <code>maybe-mystery-channels.fasta</code>. The sequences in <code>maybe-mystery-channels.fasta</code> are our putative channel proteins.</p>
 </blockquote>
-<pre><code>cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq | grep --no-group-separator -A1 -w -f - mystery.fa | tee -a maybe-mystery-channels.fasta</code></pre>
+<pre><code>cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq \
+| grep --no-group-separator -A1 -w -f - mystery.fa \
+| tee -a maybe-mystery-channels.fasta</code></pre>
 <blockquote>
 <p>I’m don’t the same thing here, but instead of pulling out the things that <em>are</em> channel proteins from the mystery dataset, I’m pulling out the things that are <em>not</em> channel proteins, hopefully. See the <code>-v</code> flag that I passed to <code>grep</code>? What does this do?</p>
 </blockquote>
-<pre><code>cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq | grep -v --no-group-separator -A1 -w -f - mystery.fa | tee -a hopefully-not-channels.fasta</code></pre>
+<pre><code>time cat identified_channel_prots.out | cut -d &quot; &quot; -f1 | grep ENS | sort | uniq \
+| grep -v --no-group-separator  -w -f - mystery.fa | grep  &quot;&gt;&quot; \
+| cut -d &quot; &quot; -f1 | sed &#39;s_&gt;__&#39; \
+| grep  --no-group-separator -A1 -w -f - mystery.fa \
+| tee -a hopefully-not-channels.fasta</code></pre>
 <blockquote>
 <p>Check to see if the HMM did a good job in finding the channel proteins, by blasting the proteins that HMMscan identified, to the UniProt database.</p>
 </blockquote>
