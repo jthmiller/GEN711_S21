@@ -7,7 +7,7 @@ During this lab, we will acquaint ourselves with the software package HMMER. You
 
 2. Regarding your dataset. Find Channel proteins. Think about how to make a better HMM.
 
-The HMMER manual <a href="ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf">ftp://selab.janelia.org/pub/software/hmmer3/3.1b1/Userguide.pdf</a>
+The HMMER manual <a href="http://eddylab.org/software/hmmer/Userguide.pdf">http://eddylab.org/software/hmmer/Userguide.pdf</a>
 
 The HMMER webpage: <a href="http://hmmer.janelia.org/">http://hmmer.janelia.org/</a>
 
