@@ -50,6 +50,10 @@ __Week 3__</br>
 __Week 4__</br>
 - [Use a HMM to identify unknown sequences](hmmer.html)</br>
 
+__Week 5__ </br>
+- [Trimming fastQ files](trimming.html)</br>
+
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)
