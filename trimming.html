@@ -329,14 +329,14 @@ $(document).ready(function () {
 <blockquote>
 <p>So now that we have updates the software, let’s see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
 </blockquote>
-<pre><code>sudo apt-get -y install build-essential python python-pip gdebi-core r-base</code></pre>
+<pre><code>sudo apt-get -y install build-essential python python-pip</code></pre>
 <blockquote>
 <p>Install Conda.</p>
 </blockquote>
 <pre><code>mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 <blockquote>
@@ -345,7 +345,7 @@ source ~/.bashrc</code></pre>
 <pre><code>conda update -y -n base conda
 conda create -y --name gen711
 conda activate gen711
-conda install -y -c bioconda trimmomatic jellyfish</code></pre>
+conda install -y -c bioconda trimmomatic</code></pre>
 <blockquote>
 <p>install something via pip. Pip is the python package manager.</p>
 </blockquote>
@@ -354,8 +354,11 @@ pip install fastqp</code></pre>
 <blockquote>
 <p>Download data. For this lab, we’ll be using only 1 sequencing file, which contains 1 million reads. This is a tiny dataset.</p>
 </blockquote>
-<pre><code>cd
-curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq</code></pre>
+<pre><code>
+mkdir $HOME/reads
+cd $HOME/reads
+curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
+curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq</code></pre>
 <hr />
 <blockquote>
 <p>Do 3 different trimming levels - 2, 10, 30. This one is trimming at a Phred score of 30 (BAD!!!) PAY ATTENTION HERE!!! When you run the other commands, you’ll need to change the numbers in <code>LEADING:30</code> <code>TRAILING:30</code> <code>SLIDINGWINDOW:4:30</code> and <code>reads.trim.Phred30.fastq</code> from 30 to whatever trimming level you are using. Use a text editor (not Word) to do this. BBEdit on a mac, or TextEdit on PC are good choices.</p>
@@ -363,25 +366,30 @@ curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq</code></pre>
 <blockquote>
 <p>paste the below lines together as 1 command. you will need to change the numbers and run 2 more times after this 1st time.</p>
 </blockquote>
-<pre><code>trimmomatic SE -threads 6 \
+<pre><code>
+CPU=6
+base=&quot;reads.trim.Phred30.fastq&quot;
+
+trimmomatic PE -threads $CPU \
+-baseout $base \
 1.subsamp_1.fastq \
-reads.trim.Phred30.fastq \
-ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.38-1/adapters/TruSeq3-PE.fa:2:30:10 \
-SLIDINGWINDOW:4:30 \
+1.subsamp_2.fastq \
+ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:40:15 \
 LEADING:30 \
 TRAILING:30 \
+SLIDINGWINDOW:4:30 \
 MINLEN:25</code></pre>
 <blockquote>
 <p>After Trimmomatic is done, Run FastQP. FastQP makes some figures that help you understand the quality of your reads, and the impact of your trimming.</p>
 </blockquote>
 <pre><code>fastqp -n 500000 1.subsamp_1.fastq -o notrim 2&gt; /dev/null | grep q50 | tee -a qual.P0.txt
-fastqp -n 500000 reads.trim.Phred2.fastq -o p2trim 2&gt; /dev/null | grep q50 | tee -a qual.P2.txt
-fastqp -n 500000 reads.trim.Phred10.fastq -o p10trim 2&gt; /dev/null | grep q50 | tee -a qual.P10.txt
-fastqp -n 500000 reads.trim.Phred30.fastq -o p30trim 2&gt; /dev/null | grep q50 | tee -a qual.P30.txt</code></pre>
+fastqp -n 500000 reads.trim.Phred30_1P.fastq -o p30trim 2&gt; /dev/null | grep q50 | tee -a qual.P30.txt
+fastqp -n 500000 reads.trim.Phred10_1P.fastq -o p10trim 2&gt; /dev/null | grep q50 | tee -a qual.P10.txt
+fastqp -n 500000 reads.trim.Phred2_1P.fastq -o p2trim 2&gt; /dev/null | grep q50 | tee -a qual.P2.txt</code></pre>
 <blockquote>
 <p>Download your results files to your local computer. Do this in a new tab if you are working on a Mac, or sign out from your instance if you are working on a PC. You will need to edit this command, then find the files on your laptop (they should go to Desktop), extract them and view.</p>
 </blockquote>
-<pre><code>rsync -av -e &quot;ssh -i $HOME/jetkey&quot; mmacmane@129.114.16.110:*zip ~/Desktop/</code></pre>
+<pre><code>rsync -av -e &quot;ssh -i $HOME/jetkey&quot; username@xxx.xxx.xxx.xx:reads/*zip ~/Desktop/</code></pre>
 </div>
 <div id="terminate-your-instance" class="section level2">
 <h2>Terminate your instance</h2>
