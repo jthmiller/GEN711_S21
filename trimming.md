@@ -36,7 +36,7 @@ sudo apt-get -y upgrade
 
 
 ```
-sudo apt-get -y install build-essential python python-pip
+sudo apt-get -y install build-essential python
 ```
 
 
@@ -63,11 +63,10 @@ conda install -y -c bioconda trimmomatic
 > install something via pip. Pip is the python package manager.
 
 ```
-pip install --upgrade pip
 pip install fastqp
 ```
 
-> Download data. For this lab, we'll be using only 1 sequencing file, which contains 1 million reads. This is a tiny dataset.
+> Download data. For this lab, we'll be using a pair of sequencing files, which contains 1 million reads each (one million pairs). This is a tiny dataset.
 
 ```
 
@@ -85,7 +84,6 @@ curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
 >paste the below lines together as 1 command. you will need to change the numbers and run 2 more times after this 1st time.
 
 ```
-
 CPU=6
 base="reads.trim.Phred30.fastq"
 
@@ -94,10 +92,10 @@ trimmomatic PE -threads $CPU \
 1.subsamp_1.fastq \
 1.subsamp_2.fastq \
 ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:40:15 \
+MINLEN:25 \
 LEADING:30 \
 TRAILING:30 \
 SLIDINGWINDOW:4:30 \
-MINLEN:25
 ```
 
 > After Trimmomatic is done, Run FastQP. FastQP makes some figures that help you understand the quality of your reads, and the impact of your trimming.
