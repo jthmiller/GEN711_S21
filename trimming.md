@@ -36,7 +36,7 @@ sudo apt-get -y upgrade
 
 
 ```
-sudo apt-get -y install build-essential python python-pip gdebi-core r-base
+sudo apt-get -y install build-essential python python-pip
 ```
 
 
@@ -45,8 +45,8 @@ sudo apt-get -y install build-essential python python-pip gdebi-core r-base
 ```
 mkdir anaconda
 cd anaconda
-curl -LO https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
-bash Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo ". $HOME/anaconda/install/etc/profile.d/conda.sh" >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -57,7 +57,7 @@ source ~/.bashrc
 conda update -y -n base conda
 conda create -y --name gen711
 conda activate gen711
-conda install -y -c bioconda trimmomatic jellyfish
+conda install -y -c bioconda trimmomatic
 ```
 
 > install something via pip. Pip is the python package manager.
@@ -70,8 +70,11 @@ pip install fastqp
 > Download data. For this lab, we'll be using only 1 sequencing file, which contains 1 million reads. This is a tiny dataset.
 
 ```
-cd
+
+mkdir $HOME/reads
+cd $HOME/reads
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
+curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
 ```
 
 ---
@@ -82,13 +85,18 @@ curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
 >paste the below lines together as 1 command. you will need to change the numbers and run 2 more times after this 1st time.
 
 ```
-trimmomatic SE -threads 6 \
+
+CPU=6
+base="reads.trim.Phred30.fastq"
+
+trimmomatic PE -threads $CPU \
+-baseout $base \
 1.subsamp_1.fastq \
-reads.trim.Phred30.fastq \
-ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.38-1/adapters/TruSeq3-PE.fa:2:30:10 \
-SLIDINGWINDOW:4:30 \
+1.subsamp_2.fastq \
+ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:40:15 \
 LEADING:30 \
 TRAILING:30 \
+SLIDINGWINDOW:4:30 \
 MINLEN:25
 ```
 
@@ -97,16 +105,16 @@ MINLEN:25
 
 ```
 fastqp -n 500000 1.subsamp_1.fastq -o notrim 2> /dev/null | grep q50 | tee -a qual.P0.txt
-fastqp -n 500000 reads.trim.Phred2.fastq -o p2trim 2> /dev/null | grep q50 | tee -a qual.P2.txt
-fastqp -n 500000 reads.trim.Phred10.fastq -o p10trim 2> /dev/null | grep q50 | tee -a qual.P10.txt
-fastqp -n 500000 reads.trim.Phred30.fastq -o p30trim 2> /dev/null | grep q50 | tee -a qual.P30.txt
+fastqp -n 500000 reads.trim.Phred30_1P.fastq -o p30trim 2> /dev/null | grep q50 | tee -a qual.P30.txt
+fastqp -n 500000 reads.trim.Phred10_1P.fastq -o p10trim 2> /dev/null | grep q50 | tee -a qual.P10.txt
+fastqp -n 500000 reads.trim.Phred2_1P.fastq -o p2trim 2> /dev/null | grep q50 | tee -a qual.P2.txt
 ```
 
 
 > Download your results files to your local computer. Do this in a new tab if you are working on a Mac, or sign out from your instance if you are working on a PC. You will need to edit this command, then find the files on your laptop (they should go to Desktop), extract them and view.
 
 ```
-rsync -av -e "ssh -i $HOME/jetkey" mmacmane@129.114.16.110:*zip ~/Desktop/
+rsync -av -e "ssh -i $HOME/jetkey" username@xxx.xxx.xxx.xx:reads/*zip ~/Desktop/
 ```
 
 ## Terminate your instance
