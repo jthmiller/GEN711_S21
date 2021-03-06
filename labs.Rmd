@@ -52,7 +52,10 @@ __Week 4__</br>
 
 __Week 5__ </br>
 - [Trimming fastQ files](trimming.html)</br>
-
+- [Download notrim.zip](lab5_figs/notrim.zip)</br>
+- [Download p2trim.zip](lab5_figs/p2trim.zip)</br>
+- [Download p10trim.zip](lab5_figs/p10trim.zip)</br>
+- [Download p30trim.zip](lab5_figs/p30trim.zip)</br>
 
 ### __ADDITIONAL RESOURCES:__
 

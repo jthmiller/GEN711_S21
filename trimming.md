@@ -95,7 +95,7 @@ ILLUMINACLIP:$HOME/anaconda/install/envs/gen711/share/trimmomatic-0.39-1/adapter
 MINLEN:25 \
 LEADING:30 \
 TRAILING:30 \
-SLIDINGWINDOW:4:30
+SLIDINGWINDOW:4:30 \
 ```
 
 > After Trimmomatic is done, Run FastQP. FastQP makes some figures that help you understand the quality of your reads, and the impact of your trimming.

@@ -33,14 +33,13 @@ sudo apt-get -y install build-essential python
 > Install Conda like you have every other week!
 
 
-> Install the following software packages via Conda like you have every other week: `samtools openssl=1.0 bedtools star bcftools vcftools sra-tools`
+> Install the following software packages via Conda like you have every other week: `samtools bedtools star bcftools vcftools sra-tools`
 
 
 >Download data
 
 ```bash
-mkdir $HOME/data
-cd $HOME/data
+cd
 curl -LO ftp://ftp.ensemblgenomes.org/pub/metazoa/release-40/fasta/danaus_plexippus/dna/Danaus_plexippus.Dpv3.dna.toplevel.fa.gz
 curl -LO https://s3.amazonaws.com/gen711/SRR585568_R1.fastq.gz
 curl -LO https://s3.amazonaws.com/gen711/SRR585568_R2.fastq.gz
@@ -52,22 +51,19 @@ gzip -d *gz
 > Index the genome
 
 ```bash
-mkdir $HOME/butterfly
+mkdir butterfly
 
 STAR --runMode genomeGenerate --genomeDir $HOME/butterfly \
---genomeFastaFiles $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa \
+--genomeFastaFiles $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa \
 --runThreadN 24
 ```
 
 >Map reads!! (10 minutes). You're mapping RNA data, from a mosquito antenna to the mosquito genome.
 
 ```bash
-mkdir $HOME/mapping
-cd $HOME/mapping
-
 STAR --runMode alignReads \
---genomeDir $HOME/butterfly/ \
---readFilesIn $HOME/data/SRR585568_R1.fastq $HOME/data/SRR585568_R2.fastq \
+--genomeDir butterfly/ \
+--readFilesIn $HOME/SRR585568_R1.fastq $HOME/SRR585568_R2.fastq \
 --runThreadN 18 \
 --outSAMtype BAM SortedByCoordinate \
 --outFileNamePrefix monarch_mapping_
@@ -76,14 +72,12 @@ STAR --runMode alignReads \
 > Let's find SNPs, but just on the largest scaffold.
 
 ```bash
-cd $HOME/mapping
-
-samtools view -h -t  $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 monarch_mapping_Aligned.sortedByCoord.out.bam \
+samtools view -h -t  $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 monarch_mapping_Aligned.sortedByCoord.out.bam \
 | awk '$1 ~ "@" || $3=="DPSCF300001"' \
-| samtools view -h -t  $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 -1 -o filtered.bam -
+| samtools view -h -t  $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 -1 -o filtered.bam -
 
 
-bcftools mpileup --skip-indels -f $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa filtered.bam | \
+bcftools mpileup --skip-indels -f $HOME/Danaus_plexippus.Dpv3.dna.toplevel.fa filtered.bam | \
 bcftools view -O v --threads 24 -v snps - > variants.vcf
 ```
 
