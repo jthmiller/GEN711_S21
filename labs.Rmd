@@ -57,6 +57,9 @@ __Week 5__ </br>
 - [Download p10trim.zip](lab5_figs/p10trim.zip)</br>
 - [Download p30trim.zip](lab5_figs/p30trim.zip)</br>
 
+__Week 6__ </br>
+- [Mapping read data](mapping.html)</br>
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)
