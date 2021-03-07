@@ -59,6 +59,7 @@ __Week 5__ </br>
 
 __Week 6__ </br>
 - [Mapping read data](mapping.html)</br>
+</br>
 
 ### __ADDITIONAL RESOURCES:__
 
