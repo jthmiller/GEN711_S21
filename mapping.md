@@ -27,7 +27,6 @@ ssh -i jetkey username@xxx.xxx.xxx.xxx
 > Install the following...
 ```
 sudo apt-get -y install build-essential python libssl-dev python3-htseq
-pip3 install HTSeq
 ```
 
 
