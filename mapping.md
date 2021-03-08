@@ -42,7 +42,7 @@ sudo apt-get -y install build-essential python libssl-dev python3-htseq
 
 mkdir $HOME/data
 cd $HOME/data
-curl -LO ftp://ftp.ensemblgenomes.org/pub/metazoa/release-50/fasta/danaus_plexippus/dna/
+curl -LO ftp://ftp.ensemblgenomes.org/pub/metazoa/release-50/fasta/danaus_plexippus/dna/Danaus_plexippus.Dpv3.dna.toplevel.fa.gz
 curl -LO ftp://ftp.ensemblgenomes.org/pub/metazoa/release-50/gff3/danaus_plexippus/Danaus_plexippus.Dpv3.50.gff3.gz
 curl -LO https://s3.amazonaws.com/gen711/SRR585568_R1.fastq.gz
 curl -LO https://s3.amazonaws.com/gen711/SRR585568_R2.fastq.gz
