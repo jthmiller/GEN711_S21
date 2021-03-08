@@ -59,7 +59,15 @@ __Week 5__ </br>
 
 __Week 6__ </br>
 - [Mapping read data](mapping.html)</br>
-</br>
+
+***
+### __Practice Exams__</br>
+- Practice Exam1 [A](lab_exam1.html)
+- Practice Exam1 [B](lab_exam1a.html)
+- Practice Exam1 [C](lab_exam1b.html)
+- Practice Exam1 [D](lab_exam1c.html)
+
+***
 
 ### __ADDITIONAL RESOURCES:__
 
