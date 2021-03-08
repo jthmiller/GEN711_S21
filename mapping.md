@@ -73,7 +73,7 @@ cd $HOME/mapping/
 STAR --runMode alignReads \
 --genomeDir $HOME/butterfly/ \
 --readFilesIn $HOME/data/SRR585568_R1.fastq $HOME/data/SRR585568_R2.fastq   \
---runThreadN 14 \
+--runThreadN 18 \
 --outFilterMultimapNmax 20 \
 --outFilterMismatchNmax 10 \
 --outFilterScoreMinOverLread 0.5 \
