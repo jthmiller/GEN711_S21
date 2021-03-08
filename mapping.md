@@ -89,6 +89,8 @@ STAR --runMode alignReads \
 ```bash
 cd $HOME/mapping/
 
+#this 1st command is pulling out alignments from the largest scaffold, and outputs a file, filtered.bam
+
 samtools view -h -t  $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 monarch_mapping_Aligned.sortedByCoord.out.bam \
 | awk '$1 ~ "@" || $3=="DPSCF300001"' \
 | samtools view -h -t  $HOME/data/Danaus_plexippus.Dpv3.dna.toplevel.fa --threads 12 -1 -o filtered.bam -
@@ -104,5 +106,18 @@ bcftools view -O v --threads 24 -v snps - > variants.vcf
 less -S variants.vcf
 ```
 
+> calculate expression, but only for genes on the biggest scaffold. 
+
+```
+htseq-count -s no -f bam -t exon \
+-i Parent filtered.bam \
+$HOME/data/Danaus_plexippus.Dpv3.50.gff3 | awk ' $2 >= 1 ' >  butterfly.gene.counts
+```
+
+>look at the expression data
+
+```
+less -S butterfly.gene.counts
+```
 
 # TERMINATE YOUR INSTANCE
