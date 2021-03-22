@@ -66,6 +66,7 @@ __Week 6__ </br>
 - Practice Exam1 [B](lab_exam1a.html)
 - Practice Exam1 [C](lab_exam1b.html)
 - Practice Exam1 [D](lab_exam1c.html)
+
 ***
 
 __Week 8__</br>
