@@ -71,6 +71,8 @@ __Week 6__ </br>
 
 __Week 8__</br>
 - [genome assembly](bacterial_assembly.html)</br>
+- [Download Illumina _report.pdf](Illumina _report.pdf)</br>
+- [Download PacBio_report.pdf](PacBio_report.pdf)</br>
 
 ### __ADDITIONAL RESOURCES:__
 
