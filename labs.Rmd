@@ -74,6 +74,9 @@ __Week 8__</br>
 - [Download Illumina _report.pdf](Illumina _report.pdf)</br>
 - [Download PacBio_report.pdf](PacBio_report.pdf)</br>
 
+__Week 9__</br>
+- [transcriptome assembly](transcriptome.html)</br>
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)
