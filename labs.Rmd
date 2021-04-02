@@ -77,6 +77,7 @@ __Week 8__</br>
 __Week 9__</br>
 - [transcriptome assembly](transcriptome.html)</br>
 
+
 ### __ADDITIONAL RESOURCES:__
 
 - [Canvas](https://mycourses.unh.edu)

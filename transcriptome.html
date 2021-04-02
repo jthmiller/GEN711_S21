@@ -279,6 +279,41 @@ $(document).ready(function () {
 <blockquote>
 <p>Install the Oyster River Software</p>
 </blockquote>
+<p>We will be using docker to do this</p>
+<pre><code>sudo usermod -a -G docker USERNAME</code></pre>
+<p>Install the image</p>
+<pre><code>docker pull macmaneslab/orp:2.2.6</code></pre>
+<blockquote>
+<p>Download Illumina RNAseq data</p>
+</blockquote>
+<pre><code>mkdir newt
+cd newt
+wget https://raw.githubusercontent.com/AdamStuckert/Gen711/master/Lab/Files/Taricha_granulosa_subsampled.1.fq
+wget https://raw.githubusercontent.com/AdamStuckert/Gen711/master/Lab/Files/Taricha_granulosa_subsampled.2.fq</code></pre>
+<blockquote>
+<p>Check everything is there!</p>
+</blockquote>
+<pre><code>ls -lht</code></pre>
+<blockquote>
+<p>Activate a conda environment</p>
+</blockquote>
+<pre><code>Activate a conda environment</code></pre>
+<blockquote>
+<p>Assemble using the ORP</p>
+</blockquote>
+<pre><code>$HOME/Oyster_River_Protocol/oyster.mk \
+STRAND=RF \
+MEM=15 \
+CPU=9 \   
+READ1=Taricha_granulosa_subsampled.1.fq \
+READ2=Taricha_granulosa_subsampled.2.fq \
+RUNOUT=newt</code></pre>
+<p>Ok, so jetstream is interpreting these all as separate lines. So to make your life easier, you can just paste this into a text editor (NOT Word!!) and then make it a single line. Paste that in. Or just type it all! It will give you the full life experience :)</p>
+</div>
+<div id="terminate-your-instance" class="section level1">
+<h1>Terminate your instance</h1>
+<div id="old-version-of-lab" class="section level2">
+<h2>old version of lab:</h2>
 <pre><code>git clone https://github.com/macmanes-lab/Oyster_River_Protocol.git
 cd Oyster_River_Protocol
 make</code></pre>
@@ -311,7 +346,8 @@ READ1=reads.1.fq \
 READ2=reads.2.fq \
 RUNOUT=smallassembly</code></pre>
 </div>
-<div id="terminate-your-instance" class="section level1">
+</div>
+<div id="terminate-your-instance-1" class="section level1">
 <h1>Terminate your instance</h1>
 </div>
 
