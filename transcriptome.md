@@ -51,4 +51,5 @@ TPM_FILT=2 \
 STRAND=RF \
 MEM=50 \
 CPU=24 \
-READ1=reads.1.fq \
+READ1=reads.1.fq 
+```
