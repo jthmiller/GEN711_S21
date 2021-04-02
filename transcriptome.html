@@ -279,15 +279,11 @@ $(document).ready(function () {
 <blockquote>
 <p>Install the Oyster River Software.. what is this black magoc DOCKER stuff??</p>
 </blockquote>
-<pre><code>git clone https://github.com/macmanes-lab/Oyster_River_Protocol.git
-cd Oyster_River_Protocol
-make
-docker pull macmaneslab/orp:2.2.8</code></pre>
+<pre><code>docker pull macmaneslab/orp:2.2.8</code></pre>
 </div>
 <div id="type" class="section level2">
 <h2>Type</h2>
-<pre><code>source ~/.profile
-docker run -it macmaneslab/orp:2.2.8 bash</code></pre>
+<pre><code>docker run -it macmaneslab/orp:2.2.8 bash</code></pre>
 <blockquote>
 <p>Download Illumina RNAseq data, and subsample it.</p>
 </blockquote>
@@ -298,10 +294,6 @@ curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
 seqtk sample -s23 1.subsamp_1.fastq 100000 &gt; reads.1.fq
 seqtk sample -s23 1.subsamp_2.fastq 100000 &gt; reads.2.fq</code></pre>
 <blockquote>
-<p>Edit config.ini</p>
-</blockquote>
-<pre><code>sed -i  &quot;s_ubuntu_$(whoami)_g&quot; $HOME/Oyster_River_Protocol/software/config.ini</code></pre>
-<blockquote>
 <p>Assemble using the ORP</p>
 </blockquote>
 <pre><code>$HOME/Oyster_River_Protocol/oyster.mk main \
@@ -309,7 +301,9 @@ TPM_FILT=2 \
 STRAND=RF \
 MEM=50 \
 CPU=24 \
-READ1=reads.1.fq </code></pre>
+READ1=reads.1.fq \
+READ2=reads.2.fq \
+RUNOUT=test</code></pre>
 </div>
 
 
