@@ -43,7 +43,7 @@ ls -lht
 > Activate a conda environment
 
 ```
-Activate a conda environment
+conda activate orp
 ```
 
 > Assemble using the ORP
