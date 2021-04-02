@@ -14,15 +14,11 @@ sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-
 > Install the Oyster River Software.. what is this black magoc DOCKER stuff??
 
 ```
-git clone https://github.com/macmanes-lab/Oyster_River_Protocol.git
-cd Oyster_River_Protocol
-make
 docker pull macmaneslab/orp:2.2.8
 ```
 ## Type
 
 ```
-source ~/.profile
 docker run -it macmaneslab/orp:2.2.8 bash
 ```
 
@@ -31,17 +27,13 @@ docker run -it macmaneslab/orp:2.2.8 bash
 ```
 cd
 source activate orp
+
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
 seqtk sample -s23 1.subsamp_1.fastq 100000 > reads.1.fq
 seqtk sample -s23 1.subsamp_2.fastq 100000 > reads.2.fq
 ```
 
-> Edit config.ini
-
-```
-sed -i  "s_ubuntu_$(whoami)_g" $HOME/Oyster_River_Protocol/software/config.ini
-```
 
 > Assemble using the ORP
 
@@ -51,5 +43,8 @@ TPM_FILT=2 \
 STRAND=RF \
 MEM=50 \
 CPU=24 \
-READ1=reads.1.fq 
-```
+READ1=reads.1.fq \
+READ2=reads.2.fq \
+RUNOUT=smallassembly
+ ```
+# Terminate your instance
