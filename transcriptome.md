@@ -11,7 +11,7 @@ See http://oyster-river-protocol.readthedocs.io
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-essential git
 ```
 
-> Install the Oyster River Software.. what is this black magoc DOCKER stuff??
+> Install the Oyster River Software.. what is this black magic DOCKER stuff??
 
 ```
 docker pull macmaneslab/orp:2.2.8
