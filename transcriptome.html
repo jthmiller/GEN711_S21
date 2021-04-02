@@ -273,60 +273,26 @@ $(document).ready(function () {
 <p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.xlarge instance.</p>
 </blockquote>
 <blockquote>
-<p>Update, upgrade, install…</p>
+<p>Update, upgrade, install… note soething different here???</p>
 </blockquote>
 <pre><code>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade &amp;&amp; sudo apt-get -y install build-essential git</code></pre>
 <blockquote>
-<p>Install the Oyster River Software</p>
+<p>Install the Oyster River Software.. what is this black magoc DOCKER stuff??</p>
 </blockquote>
-<p>We will be using docker to do this</p>
-<pre><code>sudo usermod -a -G docker USERNAME</code></pre>
-<p>Install the image</p>
-<pre><code>docker pull macmaneslab/orp:2.2.6</code></pre>
-<blockquote>
-<p>Download Illumina RNAseq data</p>
-</blockquote>
-<pre><code>mkdir newt
-cd newt
-wget https://raw.githubusercontent.com/AdamStuckert/Gen711/master/Lab/Files/Taricha_granulosa_subsampled.1.fq
-wget https://raw.githubusercontent.com/AdamStuckert/Gen711/master/Lab/Files/Taricha_granulosa_subsampled.2.fq</code></pre>
-<blockquote>
-<p>Check everything is there!</p>
-</blockquote>
-<pre><code>ls -lht</code></pre>
-<blockquote>
-<p>Activate a conda environment</p>
-</blockquote>
-<pre><code>conda activate orp</code></pre>
-<blockquote>
-<p>Assemble using the ORP</p>
-</blockquote>
-<pre><code>$HOME/Oyster_River_Protocol/oyster.mk \
-STRAND=RF \
-MEM=15 \
-CPU=9 \   
-READ1=Taricha_granulosa_subsampled.1.fq \
-READ2=Taricha_granulosa_subsampled.2.fq \
-RUNOUT=newt</code></pre>
-<p>Ok, so jetstream is interpreting these all as separate lines. So to make your life easier, you can just paste this into a text editor (NOT Word!!) and then make it a single line. Paste that in. Or just type it all! It will give you the full life experience :)</p>
-</div>
-<div id="terminate-your-instance" class="section level1">
-<h1>Terminate your instance</h1>
-<div id="old-version-of-lab" class="section level2">
-<h2>old version of lab:</h2>
 <pre><code>git clone https://github.com/macmanes-lab/Oyster_River_Protocol.git
 cd Oyster_River_Protocol
-make</code></pre>
+make
+docker pull macmaneslab/orp:2.2.8</code></pre>
 </div>
 <div id="type" class="section level2">
 <h2>Type</h2>
-<pre><code>source ~/.profile</code></pre>
+<pre><code>source ~/.profile
+docker run -it macmaneslab/orp:2.2.8 bash</code></pre>
 <blockquote>
 <p>Download Illumina RNAseq data, and subsample it.</p>
 </blockquote>
 <pre><code>cd
-source activate orp_v2
-
+source activate orp
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq
 seqtk sample -s23 1.subsamp_1.fastq 100000 &gt; reads.1.fq
@@ -334,21 +300,17 @@ seqtk sample -s23 1.subsamp_2.fastq 100000 &gt; reads.2.fq</code></pre>
 <blockquote>
 <p>Edit config.ini</p>
 </blockquote>
-<pre><code>
-sed -i  &quot;s_ubuntu_$(whoami)_g&quot; $HOME/Oyster_River_Protocol/software/config.ini</code></pre>
+<pre><code>sed -i  &quot;s_ubuntu_$(whoami)_g&quot; $HOME/Oyster_River_Protocol/software/config.ini</code></pre>
 <blockquote>
 <p>Assemble using the ORP</p>
 </blockquote>
-<pre><code>$HOME/Oyster_River_Protocol/oyster.mk main \
-MEM=50 \
-CPU=24 \
-READ1=reads.1.fq \
-READ2=reads.2.fq \
-RUNOUT=smallassembly</code></pre>
-</div>
-</div>
-<div id="terminate-your-instance-1" class="section level1">
-<h1>Terminate your instance</h1>
+<p>``` $HOME/Oyster_River_Protocol/oyster.mk main<br />
+TPM_FILT=2<br />
+STRAND=RF<br />
+MEM=50<br />
+CPU=24<br />
+READ1=reads.1.fq<br />
+</p>
 </div>
 
 
