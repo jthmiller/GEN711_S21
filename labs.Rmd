@@ -77,6 +77,9 @@ __Week 8__</br>
 __Week 9__</br>
 - [transcriptome assembly](transcriptome.html)</br>
 
+__Week 10__</br>
+- [gene expression](expression.html)</br>
+
 
 ### __ADDITIONAL RESOURCES:__
 
