@@ -266,50 +266,68 @@ $(document).ready(function () {
 </div>
 
 
-<p>====================== Lab 9: Gene Expression ======================</p>
+<div id="lab-9-gene-expression" class="section level1">
+<h1>Lab 9: Gene Expression</h1>
 <p>During this lab, we will acquaint ourselves with how to estimate gene expression. You will:</p>
 <blockquote>
-<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a <em>m1.large</em> instance.</p>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a <em>m1.xlarge</em> instance.</p>
 </blockquote>
 <blockquote>
 <p>Update and upgrade your computer like you have every other week. Yes, you may use notes and previous labs..</p>
 </blockquote>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade &amp;&amp; sudo apt-get -y install build-essential git</code></pre>
 <blockquote>
 <p>Install Conda like you have every other week!</p>
 </blockquote>
+<pre><code>mkdir anaconda
+cd anaconda
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
+echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
+conda update -y -n base conda
+conda create -y --name gen711
+conda activate gen711</code></pre>
 <blockquote>
-<p>Install the following software packages via Conda like you have every other week: <code>salmon kallisto sra-tools</code></p>
+<p>Install the following software packages via Conda like you have every other week: <code>kallisto sra-tools</code></p>
 </blockquote>
 <blockquote>
 <p>Install bashplotlib</p>
 </blockquote>
-<pre><code>conda install -y -c auto bashplotlib</code></pre>
+<pre><code>conda install -y -c conda-forge bashplotlib</code></pre>
+<blockquote>
+<p>Install Salmon</p>
+</blockquote>
+<pre><code>cd 
+curl -LO https://github.com/COMBINE-lab/salmon/releases/download/v1.4.0/salmon-1.4.0_linux_x86_64.tar.gz
+tar -zxf salmon-1.4.0_linux_x86_64.tar.gz</code></pre>
 <blockquote>
 <p>Download data</p>
 </blockquote>
 <pre class="bash"><code>cd
 mkdir $HOME/data
 cd $HOME/data
-curl -LO http://datadryad.org/bitstream/handle/10255/dryad.72141/brain.final.fasta
-curl -LO ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR157/SRR1575395/SRR1575395.sra</code></pre>
+curl -LO https://s3.amazonaws.com/reference_assemblies/eremicus/transcriptome/brain.final.fasta
+prefetch SRR1575395</code></pre>
 <blockquote>
 <p>Convert SRA format into fastQ (takes a few minutes)</p>
 </blockquote>
 <pre class="bash"><code>cd $HOME/data
-fastq-dump --split-files --split-spot SRR1575395.sra</code></pre>
+fastq-dump --split-files --split-spot $HOME/ncbi/public/sra/SRR1575395.sra</code></pre>
 <blockquote>
 <p>Use Kallisto to count</p>
 </blockquote>
 <pre class="bash"><code>mkdir $HOME/quant
 cd $HOME/quant
 kallisto index -i transcripts.idx $HOME/data/brain.final.fasta
-kallisto quant -t 10 -i transcripts.idx -o kallisto_output $HOME/data/SRR1575395_1.fastq $HOME/data/SRR1575395_2.fastq</code></pre>
+kallisto quant -t 24 -i transcripts.idx -o kallisto_output $HOME/data/SRR1575395_1.fastq $HOME/data/SRR1575395_2.fastq</code></pre>
 <blockquote>
 <p>Using Salmon to count</p>
 </blockquote>
 <pre class="bash"><code>cd $HOME/quant
-salmon index -t $HOME/data/brain.final.fasta -i transcripts_index --type quasi -k 31
-salmon quant -p 10 -i transcripts_index --seqBias --gcBias -l a \
+$HOME/salmon-latest_linux_x86_64/bin/salmon index -t $HOME/data/brain.final.fasta -i transcripts_index
+$HOME/salmon-latest_linux_x86_64/bin/salmon quant -p 24 -i transcripts_index --seqBias --gcBias -l a \
 -1 $HOME/data/SRR1575395_1.fastq \
 -2 $HOME/data/SRR1575395_2.fastq -o salmon_output</code></pre>
 <blockquote>
@@ -318,12 +336,15 @@ salmon quant -p 10 -i transcripts_index --seqBias --gcBias -l a \
 <pre class="bash"><code>cd $HOME/quant
 cat salmon_output/quant.sf | sed -e 1d | sort -nk1 &gt; salmon.quant
 cat kallisto_output/abundance.tsv | sed -e 1d | sort -nk1 &gt; kallisto.quant
-paste salmon.quant kallisto.quant  | column -s $&#39;\t&#39; -t | awk &#39;{print $1 &quot;\t&quot; ($4-$10)/((($4+$10)/2)+.001)}&#39; | awk &#39;{print $2}&#39; &gt; expression.diffs</code></pre>
+paste salmon.quant kallisto.quant  | column -s $&#39;\t&#39; -t | awk &#39;{print $1 &quot;\t&quot; ($4-$10)/((($4+$10)/2)+.001)}&#39;  &gt; expression.diffs</code></pre>
 <blockquote>
 <p>histogram</p>
 </blockquote>
-<pre class="bash"><code>hist -c blue --file expression.diffs -b 50</code></pre>
-<p>======================= TERMINATE YOUR INSTANCE =======================</p>
+<pre class="bash"><code>hist -c blue --file &lt;(cat expression.diffs | cut -f2) -b 50</code></pre>
+</div>
+<div id="terminate-your-instance" class="section level1">
+<h1>TERMINATE YOUR INSTANCE</h1>
+</div>
 
 
 
