@@ -100,7 +100,7 @@ paste salmon.quant kallisto.quant  | column -s $'\t' -t | awk '{print $1 "\t" ($
 > histogram
 
 ```bash
-hist -c blue --file <(cat expression.diffs | cut -f1) -b 50
+hist -c blue --file <(cat expression.diffs | cut -f2) -b 50
 ```
 
 
