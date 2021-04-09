@@ -94,13 +94,13 @@ $HOME/salmon-latest_linux_x86_64/bin/salmon quant -p 24 -i transcripts_index --s
 cd $HOME/quant
 cat salmon_output/quant.sf | sed -e 1d | sort -nk1 > salmon.quant
 cat kallisto_output/abundance.tsv | sed -e 1d | sort -nk1 > kallisto.quant
-paste salmon.quant kallisto.quant  | column -s $'\t' -t | awk '{print $1 "\t" ($4-$10)/((($4+$10)/2)+.001)}' | awk '{print $2}' > expression.diffs
+paste salmon.quant kallisto.quant  | column -s $'\t' -t | awk '{print $1 "\t" ($4-$10)/((($4+$10)/2)+.001)}'  > expression.diffs
 ```
 
 > histogram
 
 ```bash
-hist -c blue --file expression.diffs -b 50
+hist -c blue --file <(cat expression.diffs | cut -f1) -b 50
 ```
 
 
