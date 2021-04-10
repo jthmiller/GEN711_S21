@@ -1,22 +1,17 @@
-Lab 10: Transcriptome Assembly
+Transcriptome Assembly Project
 --
 
 See http://oyster-river-protocol.readthedocs.io
 
 > Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.xlarge instance.
 
-> Update, upgrade, install... note soething different here???
+> Update, upgrade, install...
 
 ```
-sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-essential git
+sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-essential git tmux
 ```
 
-> Install the Oyster River Software.. what is this black magoc DOCKER stuff??
-
-```
-docker pull macmaneslab/orp:2.3.2
-```
-## Type
+> Install the Oyster River Software.. 
 
 ```
 docker run -it macmaneslab/orp:2.3.2 bash
@@ -25,12 +20,9 @@ docker run -it macmaneslab/orp:2.3.2 bash
 > Download Illumina RNAseq data, and subsample it.
 
 ```
-cd
 source activate orp
 
-conda install -yc bioconda sra-tools
-conda install -yc conda-forge tmux
-
+tmux at -t project
 
 cd $HOME/data
 prefetch SRR1789336
@@ -43,7 +35,7 @@ seqtk sample -s1998 SRR1789336_2.fastq 5000000 > reads.2.fq
 > Assemble using the ORP
 
 ```
-$HOME/Oyster_River_Protocol/oyster.mk main \
+$HOME/Oyster_River_Protocol/oyster.mk \
 TPM_FILT=1 \
 STRAND=RF \
 MEM=50 \
