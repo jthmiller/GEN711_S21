@@ -80,6 +80,9 @@ __Week 9__</br>
 __Week 10__</br>
 - [gene expression](expression.html)</br>
 
+__Week 11__</br>
+- [final project tips](final_project.m)</br>
+
 
 ### __ADDITIONAL RESOURCES:__
 
