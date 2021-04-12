@@ -17,17 +17,31 @@ sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-
 docker run -it macmaneslab/orp:2.3.2 bash
 ```
 
-> Download Illumina RNAseq data, and subsample it.
+> Start a TMUX window
 
 ```
-source activate orp
+tmux new -s project
+```
 
-tmux at -t project
+> Download Illumina RNAseq data
 
+```
+conda create -yn sra
+source activate sra
+
+conda install -yc bioconda sra-tools
+
+mkdir $HOME/data
 cd $HOME/data
 prefetch SRR1789336
 
 fastq-dump --split-files --split-spot $HOME/ncbi/public/sra/SRR1789336.sra
+```
+
+> Subsample the data
+```
+source activate orp
+
 seqtk sample -s1998 SRR1789336_1.fastq 5000000 > reads.1.fq
 seqtk sample -s1998 SRR1789336_2.fastq 5000000 > reads.2.fq
 ```
