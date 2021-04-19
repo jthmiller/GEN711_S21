@@ -83,6 +83,9 @@ __Week 10__</br>
 __Week 11__</br>
 - [final project tips](final_project.html)</br>
 
+__Final project example__</br>
+- [transcriptome project example](transcriptome.md)</br>
+
 
 ### __ADDITIONAL RESOURCES:__
 

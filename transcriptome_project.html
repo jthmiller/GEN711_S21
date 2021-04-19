@@ -268,6 +268,7 @@ $(document).ready(function () {
 
 <div id="transcriptome-assembly-project" class="section level2">
 <h2>Transcriptome Assembly Project</h2>
+<p>USE A xxLarge instance!!!</p>
 <p>See <a href="http://oyster-river-protocol.readthedocs.io" class="uri">http://oyster-river-protocol.readthedocs.io</a></p>
 <blockquote>
 <p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.xlarge instance.</p>
@@ -281,26 +282,39 @@ $(document).ready(function () {
 </blockquote>
 <pre><code>docker run -it macmaneslab/orp:2.3.2 bash</code></pre>
 <blockquote>
-<p>Download Illumina RNAseq data, and subsample it.</p>
+<p>Start a TMUX window</p>
 </blockquote>
-<pre><code>source activate orp
+<pre><code>tmux new -s project</code></pre>
+<blockquote>
+<p>Download Illumina RNAseq data</p>
+</blockquote>
+<pre><code>conda create -yn sra
+source activate sra
 
-tmux at -t project
+conda install -yc bioconda sra-tools
 
+mkdir $HOME/data
 cd $HOME/data
 prefetch SRR1789336
 
 fastq-dump --split-files --split-spot $HOME/ncbi/public/sra/SRR1789336.sra
+rm -fr $HOME/ncbi/</code></pre>
+<blockquote>
+<p>Subsample the data</p>
+</blockquote>
+<pre><code>source activate orp
+
 seqtk sample -s1998 SRR1789336_1.fastq 5000000 &gt; reads.1.fq
-seqtk sample -s1998 SRR1789336_2.fastq 5000000 &gt; reads.2.fq</code></pre>
+seqtk sample -s1998 SRR1789336_2.fastq 5000000 &gt; reads.2.fq
+rm SRR1789336_*.fastq </code></pre>
 <blockquote>
 <p>Assemble using the ORP</p>
 </blockquote>
 <pre><code>$HOME/Oyster_River_Protocol/oyster.mk \
 TPM_FILT=1 \
 STRAND=RF \
-MEM=50 \
-CPU=24 \
+MEM=100 \
+CPU=44 \
 READ1=reads.1.fq \
 READ2=reads.2.fq \
 RUNOUT=SRR1789336_5M</code></pre>
