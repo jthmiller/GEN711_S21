@@ -16,7 +16,7 @@ sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-
 > Install the Oyster River Software.. 
 
 ```
-docker run -it macmaneslab/orp:2.3.3 bash
+docker run -it macmaneslab/orp:2.3.2 bash
 ```
 
 > Start a TMUX window
