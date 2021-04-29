@@ -90,6 +90,7 @@ __Final project example__</br>
 ### __Practice Exams__</br>
 - Practice Exam2 [A](lab_exam2.html)
 - Practice Exam2 [B](lab_exam2a.html)
+
 ***
 
 ### __ADDITIONAL RESOURCES:__
