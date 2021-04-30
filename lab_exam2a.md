@@ -8,7 +8,7 @@ Exam 2 - 2nd section
 
 
 
-3. Install `Linuxbrew` and the software as per the genome assembly lab ___________________ 2 points.
+3. Install `conda` and the software as per the genome assembly lab ___________________ 2 points.
 
 
 4. Download some data _________ 2 points
