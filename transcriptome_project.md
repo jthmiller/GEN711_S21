@@ -13,16 +13,16 @@ See http://oyster-river-protocol.readthedocs.io
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install build-essential git tmux
 ```
 
-> Install the Oyster River Software.. 
-
-```
-docker run -it macmaneslab/orp:2.3.2 bash
-```
-
 > Start a TMUX window
 
 ```
 tmux new -s project
+```
+
+> Install the Oyster River Software.. 
+
+```
+docker run -it macmaneslab/orp:2.3.2 bash
 ```
 
 > Download Illumina RNAseq data
