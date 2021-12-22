@@ -28,12 +28,13 @@ output:
 <br/>
 
 # __Genetics 711/811__<br/>
-Spring 2022 <br/>
+## Spring 2022 <br/>
 Contact Information for Jeffrey Miller:<br/>
 Office: ?? <br/>
 Email: ??@unh.edu <br/>
 Office hours: ? in 434 Gregg, or by appt. <br/>
-Schedule at (https://my.unh.edu/task/durham/mywildcat-success)<br/>
+ <br/>
+[Schedule](https://my.unh.edu/task/durham/mywildcat-success)<br/>
 <br/>
 </div>
 [Class slack channel](https://join.slack.com/t/gen711s21/shared_invite/zt-lhty8d0k-7BGaCR7j5pd7pnNQ3ihD0g) Email Dani if link doesn't work <br/>
