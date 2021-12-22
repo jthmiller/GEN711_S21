@@ -37,20 +37,20 @@ test </br>
 The methods, applications, and implications of genomics–the analysis of whole genomes. Microbial, plant
 and animal genomics are addressed, as well asmedical, ethical and legal implications. The lab provides exposure
 and experience on a range of bioinformatics approaches–the computer applications used in genome
-analysis.
+analysis. Much of this course content was written by Professor Matthew MacManes</br>
 
 ### __2 CONTACT INFORMATION:__
-Professor Matthew MacManes</br>
-434 Gregg Hall</br>
-603.862.4052</br>
-Matthew.MacManes@unh.edu</br>
-Twitter:@macmanes</br>
-Office hours 8-9AM Monday. Schedule at myWildcatSuccess</br>
 
-TA Danielle Blumstein</br>
-430 Gregg Hall</br>
-dmb1086@wildcats.unh.edu</br>
-Office hours 11-12PM Wednesday</br>
+ Gregg Hall</br>
+</br>
+@unh.edu</br>
+Twitter:</br>
+Office hours: Schedule at myWildcatSuccess</br>
+
+TA </br>
+ Gregg Hall</br>
+@wildcats.unh.edu</br>
+Office hours: </br>
 
 ### __3 ZOOM LINK:__
 Check the canvas email for zoom link
@@ -120,6 +120,8 @@ __Non-Required but potentially useful Textbook:__ PRACTICAL COMPUTING FOR BIOLOG
 edition by Haddock and Dunn. It is available on Amazon new, used and for rent. I think that there
 is a Kindle version if that is your thing! It should also be available in the campus bookstore, but
 you may pay more there!</br>
+
+__AWS Account:__ The proportion of genome analyses in the cloud is increasing every day. Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. </br>
 
 __Jetstream:__ For lab exercises, we will use Jetstream, which is an XSEDE resource. You will need
 to set up an account during the first lab. The EC2 interface will work properly in OSX and Linux
