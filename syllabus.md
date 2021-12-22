@@ -3,29 +3,29 @@
 
 ### 0. Course Description:
 
-The methods, applications, and implications of genomics - the analysis of whole genomes. Microbial, plant and animal genomics are addressed, as well as medical, ethical and legal implications. The lab provides exposure and experience on a range of bioinformatics approaches - the computer applications used in genome analysis.
+The methods, applications, and implications of genomics - the analysis of whole genomes. Microbial, plant and animal genomics are addressed, as well as medical, ethical and legal implications. The lab provides exposure and experience on a range of bioinformatics approaches - the computer applications used in genome analysis. Course content developed by Professor Matthew MacManes. 
 
-### 1. Contact Information for Professor Matthew MacManes
+### 1. Contact Information for Jeffrey Miller
 
-- Office: 189 Rudman Hall
-- Phone: 603-862-4052
-- Email: Matthew.MacManes@unh.edu
-- Office hours: Tues/Fri 8-9am in 189 Rudman, or by appt. Just show up, or schedule at [http://genomebio.org/office-hours/](http://genomebio.org/office-hours/)
+- Office: 
+- Phone: 
+- Email: 
+- Office hours: ? in 189 Rudman, or by appt. Just show up, or schedule at [http://genomebio.org/office-hours/](http://genomebio.org/office-hours/)
 
 
-### 2. Contact Information for Jennifer Spillane
+### 2. Contact Information for TA
 
-- Office: 193 Rudman Hall
-- Email: jlh1023@wildcats.unh.edu
-- Office hours: TBA
+- Office: 
+- Email: 
+- Office hours: 
 
-### 3. Lecture: MWF 11:10-12:00PM Rudman G89
-### 4. Lab: Friday Either 1:10-3:00PM or 3:10-5:00PM in Hewitt 301
+### 3. Lecture: MWF 10:10-11:00PM NESM 140
+### 4. Lab: Friday Either 1:10-3:00PM or 3:10-5:00PM in HORT 207
 ### 5. Web Resources:
 
 - [Slack](https://gen711f17.slack.com/)
-- Canvas: I will use this site for grades, only!
-- Google: everything you'll learn this semester has been discussed on the internet. Use it!
+- Canvas: Grades only
+- Google: everything you'll learn this semester has been discussed on the internet- it is just a matter of tracking down your question.
 - [http://SeqAnswers.com](http://SeqAnswers.com): The forums are really great.
 - BioStars: [https://www.biostars.org/t/](https://www.biostars.org/t/)
 - Summer workshop website that has lots of good info: [http://angus.readthedocs.org/en/2016](http://angus.readthedocs.org/en/2016)
@@ -45,6 +45,8 @@ The methods, applications, and implications of genomics - the analysis of whole 
 ### 7. Materials Needed
 
 **XSEDE Account:** For lab exercises, we will use the Jetstream resource. You will need to set up an account during the first lab, and will use this for all lab exercises. The Jetstream interface will work properly in OSX and Linux operating systems. For those of you with Windows computers, you will need to use the OSX computers in the computer lab. Work outside the class can be accomplished after installation of a terminal emulator (MobaXterm is best).
+
+**AWS Account:** The proportion of genome analyses in the cloud is increasing every day. Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. 
 
 ### 8. Grades
 
