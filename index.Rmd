@@ -28,6 +28,7 @@ output:
 <br/>
 
 # __Genetics 711/811__<br/>
+Spring 2022
 Contact Information for Prof. Matthew MacManes:<br/>
 Office: 434 Gregg Hall<br/>
 Email: Matthew.MacManes@unh.edu <br/>
