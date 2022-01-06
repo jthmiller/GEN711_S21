@@ -172,7 +172,7 @@ We will be happy to help participants contact local law enforcement, provide esc
 assist those experiencing harassment to feel safe for the duration of the class.
 This code of conductwas adapted from http://angus.readthedocs.io/en/2019/code-of-conduct.html</br>
 
-### __12 HOW TO GET AN A:__
+### __13. HOW TO GET AN A:__
 Receiving an A in this shall should be really easy (I mean it!), assuming you follow these basic
 guidelines.</br>
 - Come to class and lab, pay attention, be interactive: Active learning far outcompetes passive,
@@ -182,7 +182,7 @@ so while coming to class itself is good, interacting/asking questions will be mu
 will be less stressful.</br>
 - Read the book and use (with caution) online resources.</br>
 
-### __14 COURSE SCHEDULE - SUBJECT TO CHANGE:__
+### __14. COURSE SCHEDULE - SUBJECT TO CHANGE:__
 <style>
 td {
   font-size: 12px
