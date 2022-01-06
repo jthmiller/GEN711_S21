@@ -216,5 +216,4 @@ TBD       | NIB           | Personal, Medical, and Ehical Genomics          | No
 <br/>
 <img src="pic/pic3.jpeg" style="float:left; width: 100%; margin-right: 1%; margin-bottom: 0.5em;">
 <img src="pic/pic4.jpeg" style="float:left; width: 100%; margin-right: 1%; margin-bottom: 0.5em;">
-<img src="pic/MacManesLab_v8.png" style="float:left; width: 100%; margin-right: 1%; margin-bottom: 0.5em;">
 
