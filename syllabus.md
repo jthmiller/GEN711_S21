@@ -7,20 +7,20 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 ### 1. Contact Information for Jeffrey Miller
 
-- Office: 
+- Office: Rudman 312
 - Phone: 
-- Email: 
+- Email: Jeffrey.Miller@unh.edu
 - Office hours: ? in 189 Rudman, or by appt. Just show up, or schedule at [http://genomebio.org/office-hours/](http://genomebio.org/office-hours/)
 
 
 ### 2. Contact Information for TA
 
 - Office: 
-- Email: 
-- Office hours: 
+- Email: Haley.Nolen@unh.edu
+- Office hours: Haley Nolen
 
 ### 3. Lecture: MWF 10:10-11:00PM NESM 140
-### 4. Lab: Friday Either 1:10-3:00PM or 3:10-5:00PM in HORT 207
+### 4. Lab: Friday 3:10-5:00PM in HORT 207
 ### 5. Web Resources:
 
 - [Slack](https://gen711f17.slack.com/)
@@ -46,7 +46,7 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 **XSEDE Account:** For lab exercises, we will use the Jetstream resource. You will need to set up an account during the first lab, and will use this for all lab exercises. The Jetstream interface will work properly in OSX and Linux operating systems. For those of you with Windows computers, you will need to use the OSX computers in the computer lab. Work outside the class can be accomplished after installation of a terminal emulator (MobaXterm is best).
 
-**AWS Account:** The proportion of genome analyses in the cloud is increasing every day. Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. 
+**AWS Account:** The proportion of genome analyses in the cloud is increasing every day. Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). 
 
 ### 8. Grades
 
