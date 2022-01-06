@@ -39,28 +39,24 @@ and experience on a range of bioinformatics approaches–the computer applicatio
 analysis. Much of this course content was written by Professor Matthew MacManes</br>
 
 ### __2 CONTACT INFORMATION:__
-
- Gregg Hall</br>
-</br>
-@unh.edu</br>
-Twitter:</br>
+Instructor: Jeffrey Miller</br>
+Email: jeffrey.miller@unh.edu</br>
+Office: Rudman 312</br>
 Office hours: Schedule at myWildcatSuccess</br>
 
-TA </br>
- Gregg Hall</br>
-@wildcats.unh.edu</br>
-Office hours: </br>
+TA: Haley Nolen, PhD Candidate</br>
+Email: Haley.Nolen@unh.edu@wildcats.unh.edu</br>
+Office: 
+Office hours: Schedule at myWildcatSuccess</br>
 
 ### __3 ZOOM LINK:__
-Check the canvas email for zoom link
+Check the canvas zoom link
 
 ### __4 LECTURE:__
-MWF 10:10-11:00PM Gregg 110</br>
-Monday class will be in person for those who want this.
+MWF 10:10-11:00PM NESM 140</br>
 
 ### __5 LAB:__
-Friday 3:10-5:00PM Kingsbury N134</br>
-Will be in person for 11 people (which 11, TBD).
+Friday 3:10-5:00PM in HORT 207</br>
 
 ### __6 COVID19:__
 Without a doubt, learning and teaching during global pandemic is going to come with significant
@@ -85,15 +81,11 @@ will have to make decisions and changes as we go along. I run the class more lik
 than dictatorship, so we will vote on issues whenever possible. Please be flexible with me, and I
 promise I will be flexible with you all.</br>
 
-__One specific issue is related to the lab__... We have 2 hours per week of lab, and (right now) 32
-students. The room capacity is 11 so ya the math does not really work. Stay tuned for a proposal.</br>
-
 ### __7 WEB RESOURCES:__
 Canvas: I will use this for grades</br>
-Website: https://macmanes.github.io/GEN711_S21/</br>
-Google: everything you’ll learn this semester has been discussed on the internet - a lot. Use it!</br>
-SummerWorkshops: http://angus.readthedocs.org/en/2014 and http://angus.readthedocs.</br>
-org/en/2015
+Website: https://jthmiller.github.io/GEN711_S21/</br>
+Google: everything you'll learn this semester has been discussed on the internet- it is just a matter of learning how to ask the question in way that someone else has. </br>
+SummerWorkshops: https://angus.readthedocs.io/en/2019/</br>
 
 ### __8 ASSIGNMENTS AND EXAMS:__
 __Weekly Assignments:__ These are assigned in lab, and typically involve some sort of sequence
@@ -120,7 +112,9 @@ edition by Haddock and Dunn. It is available on Amazon new, used and for rent. I
 is a Kindle version if that is your thing! It should also be available in the campus bookstore, but
 you may pay more there!</br>
 
-__AWS Account:__ The proportion of genome analyses in the cloud is increasing every day. Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. </br>
+__AWS Account:__ The proportion of genome analyses in the cloud is increasing every day. 
+Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. 
+We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. </br>
 
 __Jetstream:__ For lab exercises, we will use Jetstream, which is an XSEDE resource. You will need
 to set up an account during the first lab. The EC2 interface will work properly in OSX and Linux
@@ -157,7 +151,7 @@ you have a disability requiring accommodation, you must register with Disability
 Students (DSS). Contact DSS at 862-2607. If you have received an Accommodation Letter for this
 course from DSS, please meet with Prof. MacManes privately to review those accommodations.
 12 CODE OF CONDUCT</br>
-NeedHelp? You can reach the course instructor, MattMacManes at Matthew.MacManes@unh.edu.
+NeedHelp? You can reach the course instructor, Jeffrey Miller at Jeffrey.Miller@unh.edu.
 Conversations are held in confidence, to the extent that it is allowed by UNH policy (https://www.unh.edu/sharpp/reporting-requirements) and state and federal law.</br>
 
 __The Code:__ Our class is dedicated to providing a harassment-free classroom experience for everyone,
@@ -178,7 +172,7 @@ please contact me or the TA immediately.</br>
 
 We will be happy to help participants contact local law enforcement, provide escorts, or otherwise
 assist those experiencing harassment to feel safe for the duration of the class.
-This code of conductwas adapted from http://angus.readthedocs.io/en/2017/code-of-conduct.html</br>
+This code of conductwas adapted from http://angus.readthedocs.io/en/2019/code-of-conduct.html</br>
 
 ### __13 HOW TO GET AN A:__
 Receiving an A in this shall should be really easy (I mean it!), assuming you follow these basic
@@ -198,23 +192,24 @@ td {
 </style>
 Week   | Chapter       | Topic                                           | Lab
 |:---------:|:---------------:|:-------------------------------------------------:|:---------------------------:|
-Feb 1     | 1 & 7         | Intro to Bioinformatics and Molecular Evolution | No Lab
-Feb 8     | 2 & 3         | Finding Data & Pairwise Alignment               | Intro to UNIX & Alignment
-Feb 15    | 4             | BLAST                                           | BLAST
-Feb 22    | 5             | Advanced Search (BLAT/HMM/others)               | HMMER/RepeatMasker
-Mar 1     | 6             | Multiple Sequence Alignment                     | MSA
-Mar 8     | NIB           | Modern High Throughput Sequencing               | fastA/fastQ file processing
-Mar 12    | EXAM 1        |                                                 |
-Mar 15    | NIB           | Sequence Read Analysis                          | Exam Given in Lab
-Mar 29    | 8             | RNA and Transcriptomics                         | Transcriptome Analyses
-Apr 5     | 9+            | Gene Expression Measuring                       | Gene Expression
-Apr 12    | 16            | Genome Evolution                                | Differential Expression
-Apr 19    | NIB           | Genome Assembly                                 | No Lab - Veterans Day
-Apr 26    | NIB           | Genome Analyses                                 | Genome Assembly
-Apr 30    | EXAM 2        |                                                 |
-May 3     | NIB           | Population Genomics                             | Genome Analyses
-May 10    | NIB           | Personal and Medical Genomics                   | Exam Given in Lab
-May 17    | NIB           | Ethics & Final Project Presentations            | No Lab
+Jan 26    | 1 & 7         | Intro to Bioinformatics and Molecular Evolution | No Lab
+Jan 31    | 2 & 3         | Finding Data & Pairwise Alignment               | Intro to UNIX & Alignment
+Feb 7     | 4             | BLAST                                           | BLAST
+Feb 14    | 5             | Advanced Search (BLAT/HMM/others)               | HMMER/RepeatMasker
+Feb 21    | 6             | Multiple Sequence Alignment                     | MSA
+Feb 28    | NIB           | Modern High Throughput Sequencing               | fastA/fastQ file processing
+***March 4th EXAM 1***
+Mar 7     | NIB           | Sequence Read Analysis                          | Exam Given in Lab
+Mar 14    | BREAK         |                                                 |
+Mar 21    | 8             | RNA and Transcriptomics                         | Transcriptome Analyses
+Mar 28    | 9+            | Gene Expression Measuring                       | Measuring Gene Expression
+Apr 4     | 16            | Genome Evolution                                | Differential Expression
+Apr 11    | NIB           | Genome Assembly                                 | Genome Assembly
+Apr 18    | NIB           | Genome Analyses                                 | Genome Analyses
+***Apr 22nd EXAM 2***
+May 2     | NIB           | Population Genomics                             | Exam Given in Lab
+May 9     | NIB           | Final Project Presentations                     | No Lab
+TBD       | NIB           | Personal, Medical, and Ehical Genomics          | No Lab
 
 </div>
 <div class="col-xs-12 col-sm-3">
