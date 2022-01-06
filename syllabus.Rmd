@@ -196,7 +196,7 @@ Feb 7     | 4             | BLAST                                           | BL
 Feb 14    | 5             | Advanced Search (BLAT/HMM/others)               | HMMER/RepeatMasker
 Feb 21    | 6             | Multiple Sequence Alignment                     | MSA
 Feb 28    | NIB           | Modern High Throughput Sequencing               | fastA/fastQ file processing
-          |               |***March 4th EXAM 1***                           |
+          |               | ***March 4th EXAM 1***                          |
 Mar 7     | NIB           | Sequence Read Analysis                          | Exam Given in Lab
 Mar 14    | BREAK         |                                                 |
 Mar 21    | 8             | RNA and Transcriptomics                         | Transcriptome Analyses
@@ -204,7 +204,7 @@ Mar 28    | 9+            | Gene Expression Measuring                       | Me
 Apr 4     | 16            | Genome Evolution                                | Differential Expression
 Apr 11    | NIB           | Genome Assembly                                 | Genome Assembly
 Apr 18    | NIB           | Genome Analyses                                 | Genome Analyses
-          |               |***Apr 22nd EXAM 2***                            |
+          |               | ***Apr 22nd EXAM 2***                           |
 May 2     | NIB           | Population Genomics                             | Exam Given in Lab
 May 9     | NIB           | Final Project Presentations                     | No Lab
 TBD       | NIB           | Personal, Medical, and Ehical Genomics          | No Lab
