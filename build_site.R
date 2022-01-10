@@ -9,4 +9,4 @@ rmarkdown::render_site()
 
 ### Miller Notes
 ## Directory must contain either an "index.Rmd" or "index.md" file.
-## Directory must contain a site configuration file ("_site.yml").
+## Directory must contain a site configuration file ("_site.yml").s

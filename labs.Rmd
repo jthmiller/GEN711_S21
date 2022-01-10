@@ -1,7 +1,7 @@
 ---
 title: "GEN 711 Lab"
 author: 
-date: "Spring 2021"
+date: "Spring 2022"
 output: html_document
 ---
 
@@ -35,9 +35,9 @@ h4.date { /* Header 4 - and the author and data headers use this too  */
 __Week 1__</br>
 - Sign up for an XSEDE account [here](https://www.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_58_struts_action=%2Flogin%2Fcreate_account)</br>
 - Download putty terminal (for windows machines only!) [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)</br>
-- [Command line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/): You can (and should) be working on this from you personal laptop.</br>
 
 __Week 2__</br>
+- [Command line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/): You can (and should) be working on this from you personal laptop.</br>
 - Log in to [Jetstream](https://use.jetstream-cloud.org/). Here is some [info about it](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview).</br>
 - [Setting up your Jetstream VM](usingssh.html) for mac users</br>
 - [Setting up your Jetstream VM](usingssh_windows.html) for windows users</br>
@@ -97,11 +97,11 @@ __Final project example__</br>
 
 - [Canvas](https://mycourses.unh.edu)
 
-- [Github](https://github.com/macmanes/GEN711_S21)
+- [Github](https://github.com/jthmiller/GEN711_S21)
 
-- [Summer Workshops](http://angus.readthedocs.org/en/2014)
+- [Summer Workshops](http://angus.readthedocs.org/en/2019)
 
-- [More Summer Workshops](http://angus.readthedocs.org/en/2015)
+- [More Summer Workshops](http://angus.readthedocs.org/en/2019)
 
 - [Helpful online book](https://open.oregonstate.education/computationalbiology/)
 
