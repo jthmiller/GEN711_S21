@@ -30,7 +30,7 @@ output:
 # __Genetics 711/811__<br/>
 ## Spring 2022 <br/>
 Contact Information:  <br/>
-Jeffrey Miller:<br/>
+Jeffrey Miller<br/>
 Office: Rudman 312 <br/>
 Email: jeffrey.miller@unh.edu <br/>
 Office hours: Rudman 312 TBD and by appt. <br/>
