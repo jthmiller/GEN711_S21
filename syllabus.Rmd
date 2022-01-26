@@ -42,12 +42,12 @@ analysis. Much of this course content was written by Professor Matthew MacManes<
 Instructor: Jeffrey Miller</br>
 Email: jeffrey.miller@unh.edu</br>
 Office: Rudman 312</br>
-Office hours: Schedule at myWildcatSuccess</br>
+Office hours: 8:30-10:30am or by appointment</br>
 
 TA: Haley Nolen, PhD Candidate</br>
 Email: Haley.Nolen@unh.edu@wildcats.unh.edu</br>
-Office: 
-Office hours: Schedule at myWildcatSuccess</br>
+Office: Rudman 312
+Office hours: </br>
 
 ### __3. ZOOM LINK:__
 Check the canvas zoom link
@@ -173,7 +173,7 @@ assist those experiencing harassment to feel safe for the duration of the class.
 This code of conductwas adapted from http://angus.readthedocs.io/en/2019/code-of-conduct.html</br>
 
 ### __13. HOW TO GET AN A:__
-Receiving an A in this shall should be really easy (I mean it!), assuming you follow these basic
+Receiving an A in this should be really easy (I mean it!), assuming you follow these basic
 guidelines.</br>
 - Come to class and lab, pay attention, be interactive: Active learning far outcompetes passive,
 so while coming to class itself is good, interacting/asking questions will be much better.</br>
@@ -188,26 +188,25 @@ td {
   font-size: 12px
 }
 </style>
-Week   | Chapter       | Topic                                           | Lab
-|:---------:|:---------------:|:-------------------------------------------------:|:---------------------------:|
-Jan 26    | 1 & 7         | Intro to Bioinformatics and Molecular Evolution | No Lab
-Jan 31    | 2 & 3         | Finding Data & Pairwise Alignment               | Intro to UNIX & Alignment
-Feb 7     | 4             | BLAST                                           | BLAST
-Feb 14    | 5             | Advanced Search (BLAT/HMM/others)               | HMMER/RepeatMasker
-Feb 21    | 6             | Multiple Sequence Alignment                     | MSA
-Feb 28    | NIB           | Modern High Throughput Sequencing               | fastA/fastQ file processing
-          |               | ***March 4th EXAM 1***                          |
-Mar 7     | NIB           | Sequence Read Analysis                          | Exam Given in Lab
-Mar 14    | BREAK         |                                                 |
-Mar 21    | 8             | RNA and Transcriptomics                         | Transcriptome Analyses
-Mar 28    | 9+            | Gene Expression Measuring                       | Measuring Gene Expression
-Apr 4     | 16            | Genome Evolution                                | Differential Expression
-Apr 11    | NIB           | Genome Assembly                                 | Genome Assembly
-Apr 18    | NIB           | Genome Analyses                                 | Genome Analyses
-          |               | ***Apr 22nd EXAM 2***                           |
-May 2     | NIB           | Population Genomics                             | Exam Given in Lab
-May 9     | NIB           | Final Project Presentations                     | No Lab
-TBD       | NIB           | Personal, Medical, and Ehical Genomics          | No Lab
+Week   | Topic                                           | Lab
+|:---------:|:-------------------------------------------------:|:---------------------------:|
+Jan 26    | Intro to Bioinformatics                          | No Lab
+Jan 31    |                                                 | Introduction to the Command Line for Genomics 1
+Feb 7     | BLAST Finding Data & Pairwise Alignment         | Introduction to the Command Line for Genomics 2
+Feb 14    | Advanced Search (BLAT/HMM/others)               | Data Wrangling and Processing for Genomics 1
+Feb 21    | Multiple Sequence Alignment                     | Data Wrangling and Processing for Genomics 2
+Feb 28    | Modern High Throughput Sequencing               | Intro to R and RStudio for Genomics
+          | ***March 4th EXAM 1***                          |
+Mar 7     | Sequence Read Analysis                          | Exam Given in Lab
+Mar 14    | BREAK                                           |
+Mar 21    | RNA and Transcriptomics                         | Github and Cloud Computing
+Mar 28    | Gene Expression Measuring                       | Data Analysis and Vis
+Apr 4     | Genome Evolution                                | Microbiome analysis 1
+Apr 11    | Genome Assembly                                 | Microbiome analysis 2
+Apr 18    | Genome Analyses                                 | Final Project work session
+          | ***Apr 22nd EXAM 2***                           | 
+May 2     | Population Genomics                             | Exam Given in Lab
+May 9     | Final Project Presentations                     | No Lab
 
 </div>
 <div class="col-xs-12 col-sm-3">
