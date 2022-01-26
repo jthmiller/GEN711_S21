@@ -88,21 +88,26 @@ Google: All of the computational tools you'll learn this semester has been discu
 SummerWorkshops: https://angus.readthedocs.io/en/2019/</br>
 
 ### __8. ASSIGNMENTS AND EXAMS:__
-__Weekly Assignments:__ These are assigned in lab, and typically involve some sort of sequence
-analysis and short answer questions. There will be 10 throughout the semester worth 20 points
-each (200pts total). You may work in groups, but you must submit your own report. These will
-be due 1 week after they are assigned, typically on Tuesday, unless otherwise instructed. NO late
-assignments accepted.</br>
+__Lab Assignments:__ These are assigned in lab, and typically involve some sort of sequence
+analysis, short answer questions, and the notes that you took during lab. You may work in groups, but you must submit your own report. 
+These will be due in lab, unless otherwise instructed. NO late assignments accepted. 
+9 labs, lowest dropped. 80/200 lab and discussion points </br>
+
+__Lab Practicals:__ Two lab practical exams (50 pts each, 100/200 of the lab and discussion points).</br>
+
+__Paper Discussion Participation Points:__ We will discuss genomics and bioinformatics papers over the semester. 
+Groups will be tasked with summarizing the paper to get discussion rolling. Participation in this discussion will earn 
+20 points (20/100)
 
 __Exams:__ There will be 2 exams covering both lecture and lab material. Each will be worth 100
-points. The dates for these will be March 12 and April 30. Makeup exams will be permitted only
-under extreme documented circumstances, or by prior approval (>1week) fromProf. MacManes.</br>
+points. The dates for these will be March 4 and April 22. Makeup exams will be permitted only
+under extreme documented circumstances, or by prior approval (>1week) from the instructor.</br>
 
 __Final Project:__ The final project will consist of an oral presentation and written report of a topic
 related to genomics and bioinformatics. Projects must incorporate an implementation of the
 computational techniques we’ve learned about. The final project will be worth 200 points (150
-written/50 oral). Oral presentations will occur during the last 2 days of class. Written reports
-will be due on the last day of class. You may work in groups (<5 members - mix of grad and
+written/50 oral). Oral presentations will occur during the last week of class. Written reports
+will be due on the last day of class. You may work in groups (<6 members - mix of grad and
 undergrad), with the understanding that expectations increase with group size, given division of
 labor. More details will be provided later in the semester.
 
@@ -114,11 +119,12 @@ you may pay more there!</br>
 
 __AWS Account:__ The proportion of genome analyses in the cloud is increasing every day. 
 Supercomputers that usually host our web searches (google) and web shopping (Amazon) sell their extra comutational power when volume is low. 
-We will scratch the surface of the approach to analyzing genomic data at Amazon (AWS). Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. </br>
+We will try to scratch the surface of this approach to analyzing genomic data at Amazon (AWS). 
+Cloud-computing comes with powerful and cost-cutting tools that will be commonplace in the future of bioinformatics. </br>
 
 __Jetstream:__ For lab exercises, we will use Jetstream, which is an XSEDE resource. You will need
 to set up an account during the first lab. The EC2 interface will work properly in OSX and Linux
-operating systems. For those of you withWindows computers, you will need to install a terminal
+operating systems. For those of you with Windows computers, you may need to install a terminal
 emulator (MobaXterm is one option), or use the OSX computers in the computer lab.</br>
 
 __Laptop:__ Please no one purchase a laptop for this course!!! But please bring it to all course meetings
@@ -133,7 +139,7 @@ The grade scale is: 93-100=A; 90-92.99=A-; 87-89.99=B+; 83-86.99=B; 80-82.99=B-;
 |---------------|-----:|
 |Exams          |200
 |Final Project  |200
-|Participation  |200
+|Lab and Discussion  |200
 |**Total Points**   |**600**
 
 
@@ -190,23 +196,24 @@ td {
 </style>
 Week   | Topic                                           | Lab
 |:---------:|:-------------------------------------------------:|:---------------------------:|
-Jan 26    | Intro to Bioinformatics                          | No Lab
-Jan 31    |                                                 | Introduction to the Command Line for Genomics 1
-Feb 7     | BLAST Finding Data & Pairwise Alignment         | Introduction to the Command Line for Genomics 2
-Feb 14    | Advanced Search (BLAT/HMM/others)               | Data Wrangling and Processing for Genomics 1
-Feb 21    | Multiple Sequence Alignment                     | Data Wrangling and Processing for Genomics 2
-Feb 28    | Modern High Throughput Sequencing               | Intro to R and RStudio for Genomics
+Jan 26    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
+Jan 31    | Sequence Alignment & QAQC                       | Introduction to the Command Line for Genomics 1
+Feb 7     | BLAST, Finding Data & Pairwise Alignment        | Introduction to the Command Line for Genomics 2
+Feb 14    | Advanced Search and alignment (BLAT/HMM/others) | Data Wrangling and Processing for Genomics 1
+Feb 21    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 2
+Feb 28    | Genome Assembly and Annotation                  | Intro to R and RStudio for Genomics
           | ***March 4th EXAM 1***                          |
-Mar 7     | Sequence Read Analysis                          | Exam Given in Lab
+Mar 7     | Population Genomics                             | Practical Exam Given in Lab
 Mar 14    | BREAK                                           |
-Mar 21    | RNA and Transcriptomics                         | Github and Cloud Computing
-Mar 28    | Gene Expression Measuring                       | Data Analysis and Vis
-Apr 4     | Genome Evolution                                | Microbiome analysis 1
-Apr 11    | Genome Assembly                                 | Microbiome analysis 2
-Apr 18    | Genome Analyses                                 | Final Project work session
+Mar 21    | Community Genomics                              | Microbiome analysis 1
+Mar 28    | RNA and Transcriptomics                         | Microbiome analysis 2
+Apr 4     | RNA and Transcriptomics                         | Github and Cloud Computing
+Apr 11    | Stats and Genomics (MDS and Linear Models)      | Data Analysis and Vis
+Apr 18    | Functional Genomics                             | Practical Exam Given in Lab
           | ***Apr 22nd EXAM 2***                           | 
-May 2     | Population Genomics                             | Exam Given in Lab
+May 2     | Personal and Medical Genomics                   | Final Project work session
 May 9     | Final Project Presentations                     | No Lab
+
 
 </div>
 <div class="col-xs-12 col-sm-3">
