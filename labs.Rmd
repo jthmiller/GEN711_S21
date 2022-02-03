@@ -39,7 +39,7 @@ __Week 1__</br>
 
 __Week 2__</br>
 - Introduction to the Command Line for Genomics 1 </br>
-- Download the files for lab 2
+- Download the files for lab 2</br>
 - Download and install [miniconda3](https://docs.conda.io/en/latest/miniconda.html) by the end of the lab  </br>
 
 __Week 3__</br>
