@@ -33,65 +33,53 @@ h4.date { /* Header 4 - and the author and data headers use this too  */
 
 ### __Lab Schedule__
 __Week 1__</br>
-- Sign up for an XSEDE account [here](https://www.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_58_struts_action=%2Flogin%2Fcreate_account)</br>
-- Download putty terminal (for windows machines only!) [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)</br>
+- Get vscode installed</br>
+- Get a terminal working if you have windows. See [this](https://www.laptopmag.com/articles/use-bash-shell-windows-10) link </br>
+- Mac OSX runs terminal natively </br>
 
 __Week 2__</br>
-- [Command line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/): You can (and should) be working on this from you personal laptop.</br>
-- Log in to [Jetstream](https://use.jetstream-cloud.org/). Here is some [info about it](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465367/System+Overview).</br>
-- [Setting up your Jetstream VM](usingssh.html) for mac users</br>
-- [Setting up your Jetstream VM](usingssh_windows.html) for windows users</br>
-- [Launch a Jetstream instance](jetstream.html)</br>
-- [Connect to a Jetstream instance](connect.html)</br>
+- Introduction to the Command Line for Genomics 1 </br>
+- Download the files for lab 2
+- Download and install [miniconda3](https://docs.conda.io/en/latest/miniconda.html) by the end of the lab  </br>
 
 __Week 3__</br>
-- [Command Line BLAST](lab1_blast.html)</br>
+- Introduction to the Command Line for Genomics 2</br>
 
 __Week 4__</br>
-- [Use a HMM to identify unknown sequences](hmmer.html)</br>
+- Data Wrangling and Processing for Genomics 1</br>
 
 __Week 5__ </br>
-- [Trimming fastQ files](trimming.html)</br>
-- [Download notrim.zip](lab5_figs/notrim.zip)</br>
-- [Download p2trim.zip](lab5_figs/p2trim.zip)</br>
-- [Download p10trim.zip](lab5_figs/p10trim.zip)</br>
-- [Download p30trim.zip](lab5_figs/p30trim.zip)</br>
+- Data Wrangling and Processing for Genomics 2</br>
 
 __Week 6__ </br>
-- [Mapping read data](mapping.html)</br>
+- Intro to R and RStudio for Genomics</br>
 
-***
-### __Practice Exams__</br>
-- Practice Exam1 [A](lab_exam1.html)
-- Practice Exam1 [B](lab_exam1a.html)
-- Practice Exam1 [C](lab_exam1b.html)
-- Practice Exam1 [D](lab_exam1c.html)
-
-***
+__Week 7__</br>
+- Practical Exam Given in Lab
 
 __Week 8__</br>
-- [genome assembly](bacterial_assembly.html)</br>
-- [Download Illumina _report.pdf](Illumina _report.pdf)</br>
-- [Download PacBio_report.pdf](PacBio_report.pdf)</br>
+- BREAK
 
 __Week 9__</br>
-- [transcriptome assembly](transcriptome.html)</br>
+- Microbiome analysis 1</br>
 
 __Week 10__</br>
-- [gene expression](expression.html)</br>
+- Microbiome analysis 2</br>
 
 __Week 11__</br>
-- [final project tips](final_project.html)</br>
+- Github and Cloud Computing</br>
 
-__Final project example__</br>
-- [transcriptome project example](transcriptome_project.html)</br>
+__Week 11__</br>
+- Data Analysis and Vis</br>
 
-***
-### __Practice Exams__</br>
-- Practice Exam2 [A](lab_exam2.html)
-- Practice Exam2 [B](lab_exam2a.html)
+__Week 12__</br>
+- Final Project work session
 
-***
+__Week 13__</br>
+- Practical Exam Given in Lab </br>
+
+__Week 13__</br>
+- Final Project work session</br>
 
 ### __ADDITIONAL RESOURCES:__
 

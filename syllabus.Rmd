@@ -209,8 +209,9 @@ Mar 21    | Community Genomics                              | Microbiome analysi
 Mar 28    | RNA and Transcriptomics                         | Microbiome analysis 2
 Apr 4     | RNA and Transcriptomics                         | Github and Cloud Computing
 Apr 11    | Stats and Genomics (MDS and Linear Models)      | Data Analysis and Vis
-Apr 18    | Functional Genomics                             | Practical Exam Given in Lab
+Apr 18    | Functional Genomics                             | Final Project work session
           | ***Apr 22nd EXAM 2***                           | 
+April 25  | Functional Genomics                             | Practical Exam Given in Lab
 May 2     | Personal and Medical Genomics                   | Final Project work session
 May 9     | Final Project Presentations                     | No Lab
 
