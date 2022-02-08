@@ -196,11 +196,11 @@ td {
 Week   | Topic                                           | Lab
 |:---------:|:-------------------------------------------------:|:---------------------------:|
 Jan 26    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
-Jan 31    | Sequence Alignment & QAQC                       | Introduction to the Command Line for Genomics 1
-Feb 7     | BLAST, Finding Data & Pairwise Alignment        | Introduction to the Command Line for Genomics 2
-Feb 14    | Advanced Search and alignment (BLAT/HMM/others) | Data Wrangling and Processing for Genomics 1
-Feb 21    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 2
-Feb 28    | Genome Assembly and Annotation                  | Intro to R and RStudio for Genomics
+Jan 31    | Sequence Data & Technology, QAQC                | Curtail Dat
+Feb 7     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
+Feb 14    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
+Feb 21    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
+Feb 28    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
           | ***March 4th EXAM 1***                          |
 Mar 7     | Population Genomics                             | Practical Exam Given in Lab
 Mar 14    | BREAK                                           |
