@@ -3,7 +3,8 @@
 #not our site because of other projects we were 
 #working on at the time. 
 ## setwd("~/Documents/UNH/classes/TAing/GEN711/GEN711_S21/")
-setwd("/Users/jeffreymiller/Documents/teaching/Gen711/GEN711_S21/")
+#setwd("/Users/jeffreymiller/Documents/teaching/Gen711/GEN711_S21/")
+setwd("/Users/jeffreymiller/Documents/teaching/Gen711_811/GEN711_S21")
 #render your sweet site. 
 rmarkdown::render_site()
 

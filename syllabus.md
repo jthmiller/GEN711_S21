@@ -8,16 +8,16 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 ### 1. Contact Information for Jeffrey Miller
 
-- Office: Rudman 312
-- Phone: 
+- Office: Rudman 222
+- Phone: 218-790-0643
 - Email: Jeffrey.Miller@unh.edu
-- Office hours: ? in 189 Rudman, or by appt. Just show up, or schedule at [http://genomebio.org/office-hours/](http://genomebio.org/office-hours/)
+- Office hours: 11-12pm or by appointment
 
 
 ### 2. Contact Information for TA
 
-- Office: 
-- Email: Haley.Nolen@unh.edu
+- Office: Gregg
+- Email: Hannah.Pare@unh.edu
 - Office hours: Haley Nolen
 
 ### 3. Lecture: MWF 10:10-11:00PM NESM 140
@@ -26,7 +26,7 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 - [Slack](https://gen711f17.slack.com/)
 - Canvas: Grades only
-- Google: everything you'll learn this semester has been discussed on the internet- it is just a matter of tracking down your question.
+- Google: everything you'll learn this semester has been discussed on the internet- it is just a matter of tracking down your question and then the answer.
 - [http://SeqAnswers.com](http://SeqAnswers.com): The forums are really great.
 - BioStars: [https://www.biostars.org/t/](https://www.biostars.org/t/)
 - Summer workshop website that has lots of good info: [http://angus.readthedocs.org/en/2016](http://angus.readthedocs.org/en/2016)
@@ -53,13 +53,14 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 The grade scale is: 93-100=A; 90-92.99=A-; 87-89.99=B+; 83-86.99=B; 80-82.99=B-; 77-79.99=C+; 73-76.99=C; 70-72.99=C-; 67-69.99=D+; 63-66.99=D; 60-62.99=D-; Below 60=F
 
-| Item          |Maximum Points
-|---------------|-----:|
-|Exams          |200
-|Final Project  |100
-|Paper Presentation       |25
-|Participation  |120
-|**Total Points**   |**445**
+| Item                     |Maximum Points
+|--------------------------|-----:|
+|Exams (2 x 100)                   |200
+|Discussion Participation  |50
+|Lab Practical  | 50
+|Lab Notebook   | 50
+|Final Project + Presentation | 50
+|**Total Points**   |**400**
 
 ### 9. Course Policies
 
