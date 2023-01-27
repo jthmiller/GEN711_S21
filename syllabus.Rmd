@@ -1,7 +1,7 @@
 ---
 title: "Syllabus"
 author: 
-date: "Spring 2021"
+date: "Spring 2022"
 output: html_document
 ---
 
@@ -198,22 +198,22 @@ td {
 </style>
 Week   | Topic                                           | Lab
 |:---------:|:-------------------------------------------------:|:---------------------------:|
-Jan 26    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
-Jan 31    | Sequence Data & Technology, QAQC                | Curtail Dat
-Feb 7     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
-Feb 14    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
-Feb 21    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
-Feb 28    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
-          | ***March 4th EXAM 1***                          |
-Mar 7     | Population Genomics                             | 
-Mar 14    | BREAK                                           |
-Mar 21    | Community Genomics                              | Microbiome analysis 1
-Mar 28    | RNA and Transcriptomics                         | Microbiome analysis 2
-Apr 4     | RNA and Transcriptomics                         | Practical Exam Given in Lab
-Apr 11    | Stats and Genomics ()                           | Data Analysis and Vis 1
-Apr 18    | MDS and Linear Models                           | Data Analysis and Vis 2
-          | ***Apr 25nd EXAM 2***                           | 
-April 25  | Functional Genomics                             | Project work session
+Jan 27    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
+Jan 30    | Sequence Data & Technology, QAQC                | Introduction to Bioinformatics
+Feb 6     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
+Feb 13    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
+Feb 20    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
+Feb 27    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
+Mar 6     | Exam Review                                     | Take Home Lab
+Mar 8     | ***EXAM 1***                                    |
+Mar 13    | BREAK                                           | No Lab
+Mar 20    | Community Genomics                              | Data Wrangling and Processing for Genomics 2
+Mar 27    | RNA and Transcriptomics                         | Practical Review
+Apr 3     | RNA and Transcriptomics                         | Practical Exam Given in Lab
+Apr 10    | Stats and Genomics                              | Microbiome analysis 1
+Apr 17    | MDS and Linear Models                           | Microbiome analysis 1
+April 24  | Functional Genomics                             | Project work session
+April 25  | ***EXAM 2***                                    | 
 May 2     | Functional Genomics                             | Project work session
 May 9     | Project Presentations                           | No Lab
 
