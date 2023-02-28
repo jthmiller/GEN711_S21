@@ -212,8 +212,8 @@ Mar 27    | Stats and Genomics                              | Practical Review
 Apr 3     | Functional Genomics                             | Practical Exam Given in Lab
 Apr 10    | RNA and Transcriptomics                         | Microbiome analysis 1
 Apr 17    | MDS and Linear Models                           | Microbiome analysis 1
-April 24  | Human Genomics                                  | Project work session
-April 26  | Exam Review                                     | 
+April 24  | Exam Review                                     | Project work session
+April 26  | Guest Lecture                                  | 
 April 28  | ***EXAM 2***                                    | 
 May 2     | Human Genomics                                  | Project work session
 May 9     | Project Presentations                           | No Lab
