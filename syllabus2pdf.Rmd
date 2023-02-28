@@ -2,7 +2,7 @@
 title: "Syllabus"
 author: 
 date: "Spring 2022"
-output: html_document
+output: pdf
 ---
 
 <style type="text/css">
