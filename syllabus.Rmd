@@ -133,8 +133,8 @@ if you do. A Mac or Linux machine will make your life much easier. Windows machi
 work with some additional effort.</br>
 
 ### __10. GRADES:__
-The grade scale is: 94-100=A; 90-94=A-; 87-90=B+; 84-87=B; 80-84=B-; 77-80=C+;
-74-77=C; 70-74=C-; 67-70=D+; 64-67=D; 60-64=D-; Below 60=F</br>
+The grade scale is:  =A;  =A-;  =B+;  =B;  =B-;  =C+;
+ =C;  =C-;  =D+;  =D;  =D-; Below  =F</br>
 
 | Item                     |Maximum Points
 |--------------------------|-----:|

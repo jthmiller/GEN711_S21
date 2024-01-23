@@ -17,8 +17,8 @@ The methods, applications, and implications of genomics - the analysis of whole 
 ### 2. Contact Information for TA
 
 - Office: Gregg
-- Email: Hannah.Pare@unh.edu
-- Office hours: Haley Nolen
+- Email:  @unh.edu
+- Office hours:  
 
 ### 3. Lecture: MWF 10:10-11:00PM NESM 140
 ### 4. Lab: Friday 3:10-5:00PM in HORT 207
@@ -51,7 +51,7 @@ The methods, applications, and implications of genomics - the analysis of whole 
 
 ### 8. Grades
 
-The grade scale is: 93-100=A; 90-92.99=A-; 87-89.99=B+; 83-86.99=B; 80-82.99=B-; 77-79.99=C+; 73-76.99=C; 70-72.99=C-; 67-69.99=D+; 63-66.99=D; 60-62.99=D-; Below 60=F
+The grade scale as follows on CANVAS
 
 | Item                     |Maximum Points
 |--------------------------|-----:|
