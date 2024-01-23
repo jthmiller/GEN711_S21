@@ -11,24 +11,38 @@
 
 
 
-<title>trimming.utf8</title>
+<title>trimming</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -41,32 +55,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -77,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,40 +83,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -158,7 +120,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -170,7 +132,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -180,11 +142,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -196,13 +175,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -210,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -263,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -289,7 +260,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -299,25 +270,37 @@ $(document).ready(function () {
 
 <div id="lab-5-trimming" class="section level2">
 <h2>Lab 5: Trimming</h2>
-<p>During this lab, we will acquaint ourselves with the the software packages FastQP. You will use a m1.medium machine. Your objectives are:</p>
+<p>During this lab, we will acquaint ourselves with the the software
+packages FastQP. You will use a m1.medium machine. Your objectives
+are:</p>
 <ol style="list-style-type: decimal">
-<li><p>Familiarize yourself with the software, how to execute it, how to visualize results.</p></li>
+<li><p>Familiarize yourself with the software, how to execute it, how to
+visualize results.</p></li>
 <li><p>Regarding your dataset. Characterize sequence quality.</p></li>
 </ol>
 <blockquote>
-<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will
+use a m1.medium instance.</p>
 </blockquote>
 <pre><code>ssh -i jetkey username@xxx.xxx.xxx.xxx</code></pre>
 <blockquote>
-<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily.  The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
+<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating
+system you can use (I do) on your laptop or desktop. One of the nice
+things about this OS is the ability to update the software, easily.  The
+command <code>sudo apt-get update</code> checks a server for updates to
+existing software.</p>
 </blockquote>
 <pre><code>sudo apt-get update</code></pre>
 <blockquote>
-<p>The upgrade command actually installs any of the required updates.</p>
+<p>The upgrade command actually installs any of the required
+updates.</p>
 </blockquote>
 <pre><code>sudo apt-get -y upgrade</code></pre>
 <blockquote>
-<p>So now that we have updates the software, let’s see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
+<p>So now that we have updates the software, let’s see how to add new
+software. Same basic command, but instead of the <code>update</code> or
+<code>upgrade</code> command, we’re using <code>install</code>.
+EASY!!</p>
 </blockquote>
 <pre><code>sudo apt-get -y install build-essential python</code></pre>
 <blockquote>
@@ -330,7 +313,9 @@ bash Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/anaconda/install/
 echo &quot;. $HOME/anaconda/install/etc/profile.d/conda.sh&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 <blockquote>
-<p>Make a conda environment, activate it, and install trimmomatic, and jellyfish. Make sure you know what these software packages are used for.</p>
+<p>Make a conda environment, activate it, and install trimmomatic, and
+jellyfish. Make sure you know what these software packages are used
+for.</p>
 </blockquote>
 <pre><code>conda update -y -n base conda
 conda create -y --name gen711
@@ -341,7 +326,9 @@ conda install -y -c bioconda trimmomatic</code></pre>
 </blockquote>
 <pre><code>pip install fastqp</code></pre>
 <blockquote>
-<p>Download data. For this lab, we’ll be using a pair of sequencing files, which contains 1 million reads each (one million pairs). This is a tiny dataset.</p>
+<p>Download data. For this lab, we’ll be using a pair of sequencing
+files, which contains 1 million reads each (one million pairs). This is
+a tiny dataset.</p>
 </blockquote>
 <pre><code>
 mkdir $HOME/reads
@@ -350,10 +337,17 @@ curl -LO https://s3.amazonaws.com/gen711/1.subsamp_1.fastq
 curl -LO https://s3.amazonaws.com/gen711/1.subsamp_2.fastq</code></pre>
 <hr />
 <blockquote>
-<p>Do 3 different trimming levels - 2, 10, 30. This one is trimming at a Phred score of 30 (BAD!!!) PAY ATTENTION HERE!!! When you run the other commands, you’ll need to change the numbers in <code>LEADING:30</code> <code>TRAILING:30</code> <code>SLIDINGWINDOW:4:30</code> and <code>reads.trim.Phred30.fastq</code> from 30 to whatever trimming level you are using. Use a text editor (not Word) to do this. BBEdit on a mac, or TextEdit on PC are good choices.</p>
+<p>Do 3 different trimming levels - 2, 10, 30. This one is trimming at a
+Phred score of 30 (BAD!!!) PAY ATTENTION HERE!!! When you run the other
+commands, you’ll need to change the numbers in <code>LEADING:30</code>
+<code>TRAILING:30</code> <code>SLIDINGWINDOW:4:30</code> and
+<code>reads.trim.Phred30.fastq</code> from 30 to whatever trimming level
+you are using. Use a text editor (not Word) to do this. BBEdit on a mac,
+or TextEdit on PC are good choices.</p>
 </blockquote>
 <blockquote>
-<p>paste the below lines together as 1 command. you will need to change the numbers and run 2 more times after this 1st time.</p>
+<p>paste the below lines together as 1 command. you will need to change
+the numbers and run 2 more times after this 1st time.</p>
 </blockquote>
 <pre><code>CPU=6
 base=&quot;reads.trim.Phred30.fastq&quot;
@@ -368,14 +362,20 @@ LEADING:30 \
 TRAILING:30 \
 SLIDINGWINDOW:4:30 \</code></pre>
 <blockquote>
-<p>After Trimmomatic is done, Run FastQP. FastQP makes some figures that help you understand the quality of your reads, and the impact of your trimming.</p>
+<p>After Trimmomatic is done, Run FastQP. FastQP makes some figures that
+help you understand the quality of your reads, and the impact of your
+trimming.</p>
 </blockquote>
 <pre><code>fastqp -n 500000 1.subsamp_1.fastq -o notrim 2&gt; /dev/null | grep q50 | tee -a qual.P0.txt
 fastqp -n 500000 reads.trim.Phred30_1P.fastq -o p30trim 2&gt; /dev/null | grep q50 | tee -a qual.P30.txt
 fastqp -n 500000 reads.trim.Phred10_1P.fastq -o p10trim 2&gt; /dev/null | grep q50 | tee -a qual.P10.txt
 fastqp -n 500000 reads.trim.Phred2_1P.fastq -o p2trim 2&gt; /dev/null | grep q50 | tee -a qual.P2.txt</code></pre>
 <blockquote>
-<p>Download your results files to your local computer. Do this in a new tab if you are working on a Mac, or sign out from your instance if you are working on a PC. You will need to edit this command, then find the files on your laptop (they should go to Desktop), extract them and view.</p>
+<p>Download your results files to your local computer. Do this in a new
+tab if you are working on a Mac, or sign out from your instance if you
+are working on a PC. You will need to edit this command, then find the
+files on your laptop (they should go to Desktop), extract them and
+view.</p>
 </blockquote>
 <pre><code>rsync -av -e &quot;ssh -i $HOME/jetkey&quot; username@xxx.xxx.xxx.xx:reads/*zip ~/Desktop/</code></pre>
 </div>
@@ -392,7 +392,7 @@ fastqp -n 500000 reads.trim.Phred2_1P.fastq -o p2trim 2&gt; /dev/null | grep q50
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -410,7 +410,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

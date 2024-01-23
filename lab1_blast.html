@@ -11,24 +11,38 @@
 
 
 
-<title>lab1_blast.utf8</title>
+<title>lab1_blast</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -41,32 +55,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -77,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,40 +83,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -158,7 +120,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -170,7 +132,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -180,11 +142,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -196,13 +175,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -210,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -263,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -289,7 +260,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -299,21 +270,41 @@ $(document).ready(function () {
 
 <div id="lab-2-blast" class="section level2">
 <h2>Lab 2: BLAST</h2>
-<p>During this lab, we will acquaint ourselves with the software package BLAST. Your objectives are:</p>
+<p>During this lab, we will acquaint ourselves with the software package
+BLAST. Your objectives are:</p>
 <ol style="list-style-type: decimal">
-<li><p>Familiarize yourself with the software, how to execute it, how to visualize results.</p></li>
-<li><p>Regarding your dataset, tell me how some of these genes are related to their homologous copies.</p></li>
+<li><p>Familiarize yourself with the software, how to execute it, how to
+visualize results.</p></li>
+<li><p>Regarding your dataset, tell me how some of these genes are
+related to their homologous copies.</p></li>
 </ol>
-<p>Step 1: Launch an instance on Jetstream. For this exercise, we will use a m1.medium instance.</p>
+<p>Step 1: Launch an instance on Jetstream. For this exercise, we will
+use a m1.medium instance.</p>
 <pre><code>ssh -i $HOME/jetkey username@xxx.xxx.xxx.xxx</code></pre>
-<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating system you can use (I do) on your laptop or desktop. One of the nice things about this OS is the ability to update the software, easily. The command <code>sudo apt-get update</code> checks a server for updates to existing software.</p>
+<p>The machine you are using is Linux Ubuntu: Ubuntu is an operating
+system you can use (I do) on your laptop or desktop. One of the nice
+things about this OS is the ability to update the software, easily. The
+command <code>sudo apt-get update</code> checks a server for updates to
+existing software.</p>
 <pre><code>sudo apt-get update</code></pre>
-<p>The upgrade command actually installs any of the required updates.</p>
+<p>The upgrade command actually installs any of the required
+updates.</p>
 <pre><code>sudo apt-get -y upgrade</code></pre>
-<p>OK, what are these commands? <code>sudo</code> is the command that tells the computer that we have admin privileges. Try running the commands without the sudo – it will complain that you don’t have admin privileges or something like that. <em>Careful here, using sudo means that you can do something really bad to your own computer – like delete everything</em>, so use with caution. It’s not a big worry when using Jetstream, as this is a virtual machine- fixing your worst mistake is as easy as just terminating the instance and restarting.</p>
-<p>So now that we have updates the software, lets see how to add new software. Same basic command, but instead of the <code>update</code> or <code>upgrade</code> command, we’re using <code>install</code>. EASY!!</p>
+<p>OK, what are these commands? <code>sudo</code> is the command that
+tells the computer that we have admin privileges. Try running the
+commands without the sudo – it will complain that you don’t have admin
+privileges or something like that. <em>Careful here, using sudo means
+that you can do something really bad to your own computer – like delete
+everything</em>, so use with caution. It’s not a big worry when using
+Jetstream, as this is a virtual machine- fixing your worst mistake is as
+easy as just terminating the instance and restarting.</p>
+<p>So now that we have updates the software, lets see how to add new
+software. Same basic command, but instead of the <code>update</code> or
+<code>upgrade</code> command, we’re using <code>install</code>.
+EASY!!</p>
 <pre><code>sudo apt-get -y install build-essential python3 gdebi-core r-base git libssl-dev</code></pre>
-<p>Install Conda. Conda is another package manager, but for scientific software. We will use it basically every week!</p>
+<p>Install Conda. Conda is another package manager, but for scientific
+software. We will use it basically every week!</p>
 <pre><code>mkdir anaconda
 cd anaconda
 curl -LO https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
@@ -324,26 +315,51 @@ source ~/.bashrc</code></pre>
 <pre><code>conda create -y --name gen711
 conda activate gen711
 conda install -y -c bioconda blast</code></pre>
-<p>To get a feel for the different options, type <code>blastp -help</code>. Which type of blast does this correspond to? Look at the help info for blastp and tblastx. There are A LOT of options, most of which you will be able to safely ignore. One of the challenges of bioinformatics is knowing about the options and which ones you can safely ignore, and which ones are important.</p>
+<p>To get a feel for the different options, type
+<code>blastp -help</code>. Which type of blast does this correspond to?
+Look at the help info for blastp and tblastx. There are A LOT of
+options, most of which you will be able to safely ignore. One of the
+challenges of bioinformatics is knowing about the options and which ones
+you can safely ignore, and which ones are important.</p>
 </div>
 <div id="challenge" class="section level2">
 <h2>Challenge…</h2>
-<p>You have just returned from South America, where you captured a rare - never been seen before - desert mouse. You are interested in knowing how it survives, and start by trying to identify the Sodium transport genes, in particular a gene called Scn5a (<a href="https://en.wikipedia.org/wiki/Nav1.5" class="uri">https://en.wikipedia.org/wiki/Nav1.5</a>). You’ve just had the animals’ transcriptome sequenced, and are about to begin the search!! You <em>could</em> use web blast like you’ve done in the past, but there are 20166 new sequences that you need to search and that would take a loooooooong time. Download the data that you just generated, using this command:</p>
+<p>You have just returned from South America, where you captured a rare
+- never been seen before - desert mouse. You are interested in knowing
+how it survives, and start by trying to identify the Sodium transport
+genes, in particular a gene called Scn5a (<a
+href="https://en.wikipedia.org/wiki/Nav1.5"
+class="uri">https://en.wikipedia.org/wiki/Nav1.5</a>). You’ve just had
+the animals’ transcriptome sequenced, and are about to begin the
+search!! You <em>could</em> use web blast like you’ve done in the past,
+but there are 20166 new sequences that you need to search and that would
+take a loooooooong time. Download the data that you just generated,
+using this command:</p>
 <pre><code>cd $HOME
 curl -LO https://s3.amazonaws.com/macmanes_share/transcripts.fasta</code></pre>
-<p>You know that the model organism, the lab mouse, has an excellent genome, and is probably closely related to the mystery mouse, You decide to use it to help identify the sodium transport genes in the new animal. Download the data:</p>
+<p>You know that the model organism, the lab mouse, has an excellent
+genome, and is probably closely related to the mystery mouse, You decide
+to use it to help identify the sodium transport genes in the new animal.
+Download the data:</p>
 <pre><code>curl -LO ftp://ftp.ensembl.org/pub/release-85/fasta/mus_musculus/cdna/Mus_musculus.GRCm38.cdna.all.fa.gz
 gzip -d Mus_musculus.GRCm38.cdna.all.fa.gz</code></pre>
 <div id="ok-lets-do-some-blasting.." class="section level4">
 <h4>OK, let’s do some blasting..</h4>
 <p>1st step is to make the blast database</p>
 <pre><code>makeblastdb -in Mus_musculus.GRCm38.cdna.all.fa -out mus -dbtype nucl</code></pre>
-<p>Now blast.. your results should be saved in a file called <code>blast.out</code></p>
+<p>Now blast.. your results should be saved in a file called
+<code>blast.out</code></p>
 <pre><code>blastn -db mus -max_target_seqs 1 -query transcripts.fasta -outfmt &#39;6 qseqid qlen length pident gaps evalue stitle&#39; -evalue 1e-10 -num_threads 6 -out blast.out</code></pre>
-<p>look at <code>blast.out</code>. the 1st column is the ID of the desert mouse transcript, the 2nd column is the e-value (a statistic related to how good the match between query and reference sequences is - smaller numbers better. The 3rd column is the Mouse transcript match descriptor)</p>
+<p>look at <code>blast.out</code>. the 1st column is the ID of the
+desert mouse transcript, the 2nd column is the e-value (a statistic
+related to how good the match between query and reference sequences is -
+smaller numbers better. The 3rd column is the Mouse transcript match
+descriptor)</p>
 <pre><code>less -S blast.out
 # type `q` to get out of this screen.</code></pre>
-<p>Oh crap.. There are 16501 lines in that file, how are we going to find the Scn5a gene that we are looking for?? Meet <code>grep</code>.</p>
+<p>Oh crap.. There are 16501 lines in that file, how are we going to
+find the Scn5a gene that we are looking for?? Meet
+<code>grep</code>.</p>
 <pre><code>grep -i SCN5A blast.out</code></pre>
 </div>
 </div>
@@ -352,12 +368,19 @@ gzip -d Mus_musculus.GRCm38.cdna.all.fa.gz</code></pre>
 <p>Download and install RStudio</p>
 <pre><code>curl -LO  https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1103-amd64.deb
 sudo gdebi -n rstudio-server-1.4.1103-amd64.deb</code></pre>
-<p>Find out the web address of your server. Paste the web address that comes up on the terminal, in to your browser.</p>
+<p>Find out the web address of your server. Paste the web address that
+comes up on the terminal, in to your browser.</p>
 <pre><code>printf &quot;\n\n\nMy RStudio Web server is running at: http://$(curl ifconfig.me):8787/\n\n\n&quot;</code></pre>
 <p>Make a password (make it an easy one!!!)</p>
 <pre><code>sudo passwd $(whoami)</code></pre>
-<p>Note that the text will not echo to the screen (because it’s a password!) Return to the browser login page and enter your new password. Note this will not change the global XSEDE login info (i.e. it only affects this instance). Once R is up and running, we’ll give you a quick tour of the RStudio Web interface for those of you who haven’t seen it.</p>
-<div id="in-rstudio-in-your-browser-not-the-terminal" class="section level4">
+<p>Note that the text will not echo to the screen (because it’s a
+password!) Return to the browser login page and enter your new password.
+Note this will not change the global XSEDE login info (i.e. it only
+affects this instance). Once R is up and running, we’ll give you a quick
+tour of the RStudio Web interface for those of you who haven’t seen
+it.</p>
+<div id="in-rstudio-in-your-browser-not-the-terminal"
+class="section level4">
 <h4>in RStudio in your browser (not the terminal)</h4>
 <p>Install packages and read in the results file you just made.</p>
 <pre><code>install.packages(c(&quot;readr&quot;, &quot;beanplot&quot;))
@@ -373,7 +396,9 @@ barplot(mean(blast$X3/blast$X2), main=&#39;A barplot&#39;, ylab=&quot;Percent Al
 boxplot(blast$X3/blast$X2, frame.plot=F, main=&#39;A boxplot&#39;, ylab=&quot;Percent Aligned&quot;)
 beanplot(blast$X3/blast$X2, ll = 0, beanlinewd=-1, frame.plot=F, col=&quot;blue&quot;, main=&#39;A violin plot&#39;, ylab=&quot;Percent Aligned&quot;)
 plot(blast$X3/blast$X2 ~ blast$X6, xlim=c(7e-11, 0), col=&#39;red&#39;,frame.plot=F, ylab=&quot;Percent Aligned&quot;, xlab=&#39;evalue&#39;, main=&quot;Evalue vs Percent Aligned&quot;)</code></pre>
-<p>This lab uses code from ANGUS2017: <a href="https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html" class="uri">https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html</a></p>
+<p>This lab uses code from ANGUS2017: <a
+href="https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html"
+class="uri">https://angus.readthedocs.io/en/2017/visualizing-blast-scores-with-RStudio.html</a></p>
 </div>
 </div>
 <div id="kill-your-instance" class="section level1">
@@ -389,7 +414,7 @@ plot(blast$X3/blast$X2 ~ blast$X6, xlim=c(7e-11, 0), col=&#39;red&#39;,frame.plo
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -407,7 +432,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
