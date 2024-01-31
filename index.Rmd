@@ -1,9 +1,6 @@
 ---
-title:
-output: 
-  html_document:
-    includes:
-       in_header: googleAnalytics.Rhtml
+title: "Home"
+output: html_document
 ---
 
 <img src="pic/pic2.jpeg" style="float: left; width: 100%; margin-bottom: 2em;">
@@ -43,9 +40,9 @@ Office hours: Gregg by appt. <br/>
 [Canvas with zoom links](https://mycourses.unh.edu)<br/>
 
 <br/>
-Lecture: MWF 10:10-11:00PM NESM 140<br/>
+Lecture: MWF 10:10-11:00PM<br/>
 <br/>
-Lab: Friday 3:10-5:00PM HORT 207<br/>
+Lab: Friday 3:10-5:00PM<br/>
 
 
 

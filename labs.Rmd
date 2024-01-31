@@ -1,7 +1,7 @@
 ---
 title: "GEN 711 Lab"
 author: 
-date: "Spring 2024"
+date:
 output: html_document
 ---
 
