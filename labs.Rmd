@@ -1,7 +1,7 @@
 ---
 title: "GEN 711 Lab"
 author: 
-date: "Spring 2022"
+date: "Spring 2024"
 output: html_document
 ---
 
@@ -31,57 +31,8 @@ h4.date { /* Header 4 - and the author and data headers use this too  */
 
 ***
 
-### __Lab Schedule__
-__Week 1__</br>
-- Get vscode installed</br>
-- Get a terminal working if you have windows. See [this](https://www.laptopmag.com/articles/use-bash-shell-windows-10) link </br>
-- Mac OSX runs terminal natively </br>
-
-__Week 2__</br>
-- Introduction to the Command Line for Genomics 1 </br>
-- Download the files for lab 2</br>
-- Download and install [miniconda3](https://docs.conda.io/en/latest/miniconda.html) by the end of the lab  </br>
-
-__Week 3__</br>
-- Introduction to the Command Line for Genomics 2</br>
-
-__Week 4__</br>
-- Data Wrangling and Processing for Genomics 1</br>
-
-__Week 5__ </br>
-- Data Wrangling and Processing for Genomics 2</br>
-
-__Week 6__ </br>
-- Intro to R and RStudio for Genomics</br>
-
-__Week 7__</br>
-- Practical Exam Given in Lab
-
-__Week 8__</br>
-- BREAK
-
-__Week 9__</br>
-- Microbiome analysis 1</br>
-
-__Week 10__</br>
-- Microbiome analysis 2</br>
-
-__Week 11__</br>
-- Github and Cloud Computing</br>
-
-__Week 11__</br>
-- Data Analysis and Vis</br>
-
-__Week 12__</br>
-- Final Project work session
-
-__Week 13__</br>
-- Practical Exam Given in Lab </br>
-
-__Week 13__</br>
-- Final Project work session</br>
-
-### __ADDITIONAL RESOURCES:__
+### 
+- [Labs](https://github.com/jthmiller/gen711-811)
 
 - [Canvas](https://mycourses.unh.edu)
 
