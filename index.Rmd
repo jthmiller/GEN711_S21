@@ -25,12 +25,13 @@ output: html_document
 <br/>
 
 # __Genetics 711/811__<br/>
-## Spring 2023 <br/>
+## Spring 2024 <br/>
 Contact Information:  <br/>
 Instructor: Jeffrey Miller<br/>
 Office: Gregg 222  <br/>
 Email: jeffrey.miller@unh.edu <br/>
 Office hours: By appt. and after class <br/>
+<br/>
 TA: Kaleb Ducharme<br/>
 Email: Kaleb.Ducharme@unh.edu <br/>
 Office hours: Gregg by appt. <br/>
@@ -40,9 +41,9 @@ Office hours: Gregg by appt. <br/>
 [Canvas with zoom links](https://mycourses.unh.edu)<br/>
 
 <br/>
-Lecture: MWF 10:10-11:00PM<br/>
+Lecture: MWF 10:10-11:00PM HS 201<br/>
 <br/>
-Lab: Friday 3:10-5:00PM<br/>
+Lab: Friday 3:10-5:00PM Hewitt 301<br/>
 
 
 
