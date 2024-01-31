@@ -1,8 +1,8 @@
 ---
-title: "Syllabus"
+title: "Syllabus for Canvas"
 author: 
 date: "Spring 2024"
-output: html_document
+output: pdf
 ---
 
 <style type="text/css">
@@ -44,9 +44,9 @@ Email: jeffrey.miller@unh.edu</br>
 Office: Rudman 312</br>
 Office hours: 11-12pm or by appointment</br>
 
-TA: Kaleb Ducharme</br>
+TA: Kaleb</br>
 Office: Gregg</br>
-Email: Kaleb.Ducharme@unh.edu</br>
+Email: Hannah.Pare@unh.edu</br>
 Office hours: Apptmt </br>
 
 
@@ -54,10 +54,10 @@ Office hours: Apptmt </br>
 Check the canvas zoom link
 
 ### __4. LECTURE:__
-MWF 10:10-11:00PM HS 201</br>
+MWF 10:10-11:00PM NESM 140</br>
 
 ### __5. LAB:__
-Friday 3:10-5:00PM in Hewitt 301</br>
+Friday 3:10-5:00PM in HORT 207</br>
 
 ### __6. COVID19:__
 Without a doubt, learning and teaching during global pandemic is going to come with significant
@@ -133,7 +133,8 @@ if you do. A Mac or Linux machine will make your life much easier. Windows machi
 work with some additional effort.</br>
 
 ### __10. GRADES:__
-The grade scale is availible on canvas </br>
+The grade scale is: 94-100=A; 90-94=A-; 87-90=B+; 84-87=B; 80-84=B-; 77-80=C+;
+74-77=C; 70-74=C-; 67-70=D+; 64-67=D; 60-64=D-; Below 60=F</br>
 
 | Item                     |Maximum Points
 |--------------------------|-----:|
@@ -197,26 +198,25 @@ td {
 </style>
 Week   | Topic                                           | Lab
 |:---------:|:-------------------------------------------------:|:---------------------------:|
-Jan 24    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
-Jan 29    | Sequence Data & Technology, QAQC                | Introduction to Bioinformatics
-Feb 5     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
-Feb 12    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
-Feb 19    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
-Feb 26    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
-Mar 4     | Community Genomics                                    | Practical Exam Given in Lab
-Mar 11     | Lecture Exam Review                                     | Take Home Lab
-Mar 13     | ***EXAM 1***                                    | Take Home Lab
-Mar 18    | BREAK                                           | No Lab
-Mar 18    | Stats and Genomics                              | Data Wrangling and Processing for Genomics 2
-Mar 25    | Stats and Genomics                              | Practical Review
-Apr 1     | Functional Genomics                             | Practical Exam Given in Lab
-Apr 8    | RNA and Transcriptomics                         | Microbiome analysis 1
-Apr 15    | MDS and Linear Models                           | Microbiome analysis 1
-April 22  |                                      | Project work session
-April 26  | Exam Review                                  | 
-April 29  | ***EXAM 2***                                    | 
-May 1     | Project Presentations                                  | Project work session
-May 6     | Project Presentations                           | No Lab
+Jan 27    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
+Jan 30    | Sequence Data & Technology, QAQC                | Introduction to Bioinformatics
+Feb 6     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
+Feb 13    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
+Feb 20    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
+Feb 27    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
+Mar 6     | Exam Review                                     | Take Home Lab
+Mar 8     | ***EXAM 1***                                    |
+Mar 13    | BREAK                                           | No Lab
+Mar 20    | Community Genomics                              | Data Wrangling and Processing for Genomics 2
+Mar 27    | Stats and Genomics                              | Practical Review
+Apr 3     | Functional Genomics                             | Practical Exam Given in Lab
+Apr 10    | RNA and Transcriptomics                         | Microbiome analysis 1
+Apr 17    | MDS and Linear Models                           | Microbiome analysis 1
+April 24  | Human Genomics                                  | Project work session
+April 26  | Exam Review                                     | 
+April 28  | ***EXAM 2***                                    | 
+May 2     | Human Genomics                                  | Project work session
+May 9     | Project Presentations                           | No Lab
 
 
 </div>
