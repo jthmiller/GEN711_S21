@@ -206,16 +206,15 @@ Feb 26    | Genome Assembly and Annotation                  | Data Wrangling and
 Mar 4     | Community Genomics                                    | Practical Exam Given in Lab
 Mar 11     | Lecture Exam Review                                     | Take Home Lab
 Mar 13     | ***EXAM 1***                                    | Take Home Lab
-Mar 18    | BREAK                                           | No Lab
+Mar 18    | BREAK                                           | No Lab (Take Home Practical Review)
 Mar 18    | Stats and Genomics                              | Data Wrangling and Processing for Genomics 2
-Mar 25    | Stats and Genomics                              | Practical Review
-Apr 1     | Functional Genomics                             | Practical Exam Given in Lab
-Apr 8    | RNA and Transcriptomics                         | Microbiome analysis 1
-Apr 15    | MDS and Linear Models                           | Microbiome analysis 1
-April 22  |                                      | Project work session
-April 26  | Exam Review                                  | 
-April 29  | ***EXAM 2***                                    | 
-May 1     | Project Presentations                                  | Project work session
+Mar 25    | Stats and Genomics                              | Practical Exam Given in Lab
+Apr 1     | Functional Genomics                             | Genome Assembly & Project work
+Apr 8    | RNA and Transcriptomics                          | Genome Assembly & Project work
+Apr 15    | MDS and Linear Models                           | Genome Assembly & Project work
+April 22  | Exam Review                                     | Genome Assembly & Project work
+April 29  | ***EXAM 2***                                    | Genome Assembly & Project work
+May 1     | Project Presentations                                  | Optional project work session
 May 6     | Project Presentations                           | No Lab
 
 
