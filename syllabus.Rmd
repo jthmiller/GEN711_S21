@@ -1,7 +1,7 @@
 ---
 title: "Syllabus"
 author: 
-date: "Spring 2024"
+date: "Spring 2025"
 output: html_document
 ---
 
@@ -41,13 +41,13 @@ analysis. Much of this course content was written by Professor Matthew MacManes<
 ### __2. CONTACT INFORMATION:__
 Instructor: Jeffrey Miller</br>
 Email: jeffrey.miller@unh.edu</br>
-Office: Rudman 312</br>
+Office: Gregg 222</br>
 Office hours: 11-12pm or by appointment</br>
 
 TA: Kaleb Ducharme</br>
 Office: Gregg</br>
 Email: Kaleb.Ducharme@unh.edu</br>
-Office hours: Apptmt </br>
+Office hours: by appointment </br>
 
 
 ### __3. ZOOM LINK:__
@@ -102,7 +102,7 @@ Groups will be tasked with summarizing the paper to get discussion rolling. Part
 
 On presentation day: Each group will lead class through discussion of the chosen paper. Groups should email me their slides no later than 9am of their presentation day. 
 At least 1 slide by the grad student in each group to introduce the topic, their research and larger questions addressed by the paper.
-The intro should addess questions such as "What is the goal of the study and why is the study important enough to be published?"
+The intro should address questions such as "What is the goal of the study and why is the study important enough to be published?"
 Students should present 1-2 Methods slides (Use methods figure from paper or from web and cite it!) to answer: 'What is the experimental design?',
 'Was something sequenced and how?'. 1 Results slide (at least) should be presented per figure (Interpret each), and answer: 'What was measured and/or tested?' and 'What observation/conclusion does the figure support?'
 For discussion, one slide ( more as needed so that everyone has at least one slide) should address 'What did they do well? What could have been done differently? What is next?'
@@ -137,12 +137,13 @@ The grade scale is availible on canvas </br>
 
 | Item                     |Maximum Points
 |--------------------------|-----:|
-|Exams (2 x 100)                   |200
-|Discussion Participation  |50
-|Lab Practical  | 50
-|Lab Notebook   | 50
-|Final Project + Presentation | 50
-|**Total Points**   |**400**
+|Exams (2 x 100)              |200
+|Discussion Participation     |50
+|Final Project + Presentation |50
+|Lab Practical (2 x 50)       |100
+|Lab Notebook                 |50
+|Participation                |50
+|**Total Points**             |**500**
 
 
 ### __11. COURSE POLICIES:__
@@ -197,25 +198,22 @@ td {
 </style>
 Week   | Topic                                           | Lab
 |:---------:|:-------------------------------------------------:|:---------------------------:|
-Jan 24    | Intro to Bioinformatics & Next Gen Seq          | Take home lab 
-Jan 29    | Sequence Data & Technology, QAQC                | Introduction to Bioinformatics
-Feb 5     | DNA & RNA Seq, Metadata and Genome Alignment    | Introduction to the Command Line for Genomics 1
-Feb 12    | Advanced Search and alignment (BLAT/HMM/others) | Introduction to the Command Line for Genomics 2
-Feb 19    | Molecular Evolution                             | Data Wrangling and Processing for Genomics 1
-Feb 26    | Genome Assembly and Annotation                  | Data Wrangling and Processing for Genomics 2
-Mar 4     | Community Genomics                                    | Practical Exam Given in Lab
-Mar 11     | Lecture Exam Review                                     | Take Home Lab
-Mar 13     | ***EXAM 1***                                    | Take Home Lab
-Mar 18    | BREAK                                           | No Lab (Take Home Practical Review)
-Mar 18    | Stats and Genomics                              | Data Wrangling and Processing for Genomics 2
-Mar 25    | Stats and Genomics                              | Practical Exam Given in Lab
-Apr 1     | Functional Genomics                             | Genome Assembly & Project work
-Apr 8    | RNA and Transcriptomics                          | Genome Assembly & Project work
-Apr 15    | MDS and Linear Models                           | Genome Assembly & Project work
-April 22  | Exam Review                                     | Genome Assembly & Project work
-April 29  | ***EXAM 2***                                    | Genome Assembly & Project work
-May 1     | Project Presentations                                  | Optional project work session
-May 6     | Project Presentations                           | No Lab
+1. Jan 19     | Intro to Bioinformatics & Next Gen Seq           | Take home lab 
+2. Jan 26     | Sequence Data & Technology                       | Introduction to Bioinformatics 1
+3. Feb 2      | DNA & RNA Seq, Metadata and Genome Alignment     | Introduction to Bioinformatics 2
+4. Feb 9      | Alignment and Genome Data (BLAT/HMM/others)      | Introduction to the Command Line for Genomics 1
+5. Feb 16     | Molecular Evolution                              | Introduction to the Command Line for Genomics 2
+6. Feb 23     | Genome Assembly and Annotation                   | Data Wrangling and Processing for Genomics 1
+7.  Mar 2     | Community Genomics                               | Data Wrangling and Processing for Genomics 2
+8.  Mar 9     | Lecture Exam Review ***Mar 14, EXAM 1***         | **Practice Practical in Lab**
+9.  Mar 16    | **BREAK**                                        | No Lab
+10. Mar 23    | X                                                | **Practical Exam Given in Lab**
+11. Mar 30    | Stats and Genomics                               | Github and Project Setup
+12. Apr 6     | MDS and Linear Models                            | Genome Assembly & Project work
+13. Apr 13    | Functional Genomics                              | Genome Assembly & Project work
+14. Apr 20    | RNA and Transcriptomics and **Exam Review**      | **Practical Exam Given in Lab**
+15. Apr 27    | **Apr 28, EXAM 2**                               | Genome Assembly & Project work
+16. May 4     | No Class (May 5th)                               | No Lab
 
 
 </div>
