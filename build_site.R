@@ -6,6 +6,8 @@
 #setwd("/Users/jeffreymiller/Documents/teaching/Gen711/GEN711_S21/")
 ## setwd("/Users/jeffreymiller/Documents/teaching/Gen711_811/GEN711_S21")
 setwd("/Users/jeffreymiller/Documents/teaching/Genomics&Bioinformatics/GEN711_S21/")
+require(rmarkdown)
+require(knitr)
 #render your sweet site. 
 rmarkdown::render_site()
 
