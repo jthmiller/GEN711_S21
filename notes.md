@@ -60,7 +60,7 @@ Statistical Genomics
 
 
 Bioinformaitcs:
-- Hidden-Markov Models prev Lec 7)
+- Hidden-Markov Models prev Lec 7
 - Burrows Wheeler Transform and Indexing
 - Kmers (prev Lec 14)
 - De Bruijn Graph (Prev Lec 19)
