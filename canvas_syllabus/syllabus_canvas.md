@@ -1,7 +1,7 @@
 ---
 title: "Genetics 711 / 811"
 author: Jeffrey Miller
-date: "Spring 2026"
+date: "2026"
 output: pdf
 geometry: margin=1cm
 ---
