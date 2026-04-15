@@ -178,18 +178,17 @@ Week   | Topic                                           | Lab
 9.  Mar 15    | **BREAK**                                        | No Lab
 10. Mar 22    | Community Genomics                               | More Bash & Quality Trimming
 11. Mar 29    | Statistics and Genomics                          | Github and Project Setup
-12. Apr 5     | MDS and Linear Models                            | Genome Assembly & Project work
-13. Apr 12    | Functional Genomics                              | GitHub & Project work
+12. Apr 5     | MDS and Linear Models                            | GitHub & Project work
+13. Apr 12    | Functional Genomics                              | Project work
 14. Apr 19    | RNA and Transcriptomics and **Exam Review**      | Project work
-15. Apr 26    | **Monday Apr 27, EXAM 2**                        | Project work
-16. May 3     | Last day of classes (May 4th)                    | **Practical Exam May 1st**
-
+15. Apr 26    | **Monday Apr 27, EXAM 2**                        | **Practical Exam May 1st**
+16. May 3     | Project work office hours during lecture         | No lab
 Notes:
 - Spring Break is the 16th-20th
-- Final exam week begins May 6th. No final exam
+- Final exam week begins May 6th. 
+- No final exam
 
-### __13. Additional Policies:
-
+### __13. Additional Policies:__
 Academic honesty and Honor Code: Performance on exams, and assignments is to be based on individual effort. All text passages and ideas from published or unpublished sources must be properly cited. Violations of this standard constitute plagiarism. Please review UNH academic honesty policy and plagiarism tutorial. Violations of these policies can result in an F grade in the class.
 
 Statement of disabilities: According to the Americans with Disabilities Act (as amended, 2008), each student with a disability has the right to request services from UNH to accommodate their disability. If you are a student with a documented disability or believe you may have a disability that requires accommodations, please contact Student Accessibility Services (SAS); 227 Smith Hall, or sas.office@unh.edu.

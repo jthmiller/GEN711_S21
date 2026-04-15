@@ -175,17 +175,18 @@ Week   | Topic                                           | Lab
 7.  Mar 1     | Molecular Evolution & Comparative Genomics       | Data Wrangling and Processing 2
 8.  Mar 8     | Comparative Genomics                             | **Practice Practical in Lab**
 9.  Mar 15    | **BREAK**                                        | No Lab
-10. Mar 22    | Community Genomics                               | **Practical Exam Given in Lab**
-11. Mar 29    | Statistics and Genomics                          | Github and Project Setup
-12. Apr 5     | MDS and Linear Models                            | Genome Assembly & Project work
-13. Apr 12    | Functional Genomics                              | Genome Assembly & Project work
-14. Apr 19    | RNA and Transcriptomics and **Exam Review**      | **Practical Exam Given in Lab**
-15. Apr 26    | **Apr 28, EXAM 2**                               | Genome Assembly & Project work
-16. May 3     | Last day of classes (May 4th)                    | No Lab
+10. Mar 22    | Community Genomics                               | More Bash & Quality Trimming
+11. Mar 29    | Statistics and Genomics                          | Project setup
+12. Apr 5     | MDS and Linear Models                            | Github & Project Setup
+13. Apr 12    | Functional Genomics                              | Project work
+14. Apr 19    | RNA and Transcriptomics and **Exam Review**      | Project work
+15. Apr 26    | **Monday Apr 27, EXAM 2**                        | **Practical Exam May 1st**
+16. May 3     | Project work office hours during lecture         | No lab
 
 Notes:
-- Spring Break is the 16th-20th
-- Final exam week begins May 6th
+- Spring Break is the 16th-20th.  
+- Final exam week begins May 6th.  
+- No final exam.  
 
 </div>
 <div class="col-xs-12 col-sm-3">
