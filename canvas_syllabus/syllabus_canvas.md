@@ -73,8 +73,6 @@ __Lab Assignments:__ These are assigned in lab, and typically involve some sort 
 analysis, short answer questions, and the notes that you took during lab. You may work in groups, but you must submit your own report. These will be due in lab, unless otherwise instructed. NO late assignments accepted. 
 9 labs, lowest dropped. 80/200 lab and discussion points </br>
 
-__Lab Practicals:__ Two lab practical exams (50 pts, 100/200 of the lab points).</br>
-
 __Paper Discussion Participation Points:__ We will discuss genomics and bioinformatics papers over the semester. 
 Groups will be tasked with summarizing the paper to get discussion rolling. Participation in this discussion will earn 20 points (20/100)
 
@@ -86,11 +84,11 @@ Students should present 1-2 Methods slides (Use methods figure from paper or fro
 For discussion, one slide ( more as needed so that everyone has at least one slide) should address 'What did they do well? What could have been done differently? What is next?'
 Each group needs to answer questions to clarify answers to the questions above. 
 
-__Exams:__ There will be 2 exams covering both lecture and lab material. Each will be worth 100
+__Exams:__ There will be 2 exams covering both lecture and lab material. Each will be worth 60
 points. The dates for these will be March 14 and April 28. Makeup exams will be permitted only
 under extreme documented circumstances, or by prior approval (>1week) from the instructor.</br>
 
-__Final Project:__ The final project will consist of a GitHub project submission, and an oral presentation on the final project given in lecture (or on zoom as time sees fit). Projects must incorporate an implementation of the computational techniques we’ve learned about in lab. The final project will be worth 100 points (75 submission and 25 oral). You may work in groups (<5 members - mix of grad and undergrad encouraged), with the understanding that expectations increase with group size, given the division of labor. More details will be provided later in the semester.</br>
+__Final Project:__ The final project will consist of a GitHub project submission, and an oral presentation on the final project given in lecture (or on zoom as time sees fit). Projects must incorporate an implementation of the computational techniques we’ve learned about in lab. The final project will be worth  75 points (50 submission and 25 oral). You may work in groups (<5 members - mix of grad and undergrad encouraged), with the understanding that expectations increase with group size, given the division of labor. More details will be provided later in the semester.</br>
 
 ### __7. MATERIALS NEEDED:__
 __Non-Required but potentially useful Textbook:__ PRACTICAL COMPUTING FOR BIOLOGISTS 1st
@@ -110,13 +108,12 @@ The grade scale is: 94-100=A; 90-94=A-; 87-90=B+; 84-87=B; 80-84=B-; 77-80=C+;
 
 | Item                     |Maximum Points
 |--------------------------|-----:|
-|Exams (2 x 100)              |200
-|Discussion Participation     |50
-|Final Project + Presentation |100
-|Lab Practical (2 x 50)       |100
-|Lab Notebook                 |25
-|Participation                |25
-|**Total Points**             |**500**</br>
+|Exams (2 x 60)                   |120
+|Paper Discussion & Participation |50
+|Lab Notebook & Lab Participation |25
+|Lab Practical (50 + 30)          |80 
+|Final Projects                   |75
+|**Total Points**                 |**350**</br>
 
 ### __9. COURSE POLICIES:__
 __Student conduct:__ Honesty is a core value at the University of New Hampshire. The members of
@@ -134,7 +131,7 @@ course from DSS, please meet with me privately to review those accommodations.
 
 ### __10. CODE OF CONDUCT:__</br>
 Need Help? You can reach the course instructor, Jeffrey Miller at Jeffrey.Miller@unh.edu.
-Conversations are held in confidence, to the extent that it is allowed by UNH policy (https://www.unh.edu/sharpp/reporting-requirements) and state and federal law.</br>
+Conversations are held in confidence, to the extent that it is allowed by UNH policy (https://www.unh.edu/sharpp/reporting-requirements) and state and federal law. See related policies below.</br>
 
 __The Code:__ Our class is dedicated to providing a harassment-free classroom experience for everyone,
 regardless of gender, age, sexual orientation, disability, physical appearance, race, or
@@ -179,17 +176,36 @@ Week   | Topic                                           | Lab
 7.  Mar 1     | Molecular Evolution & Comparative Genomics       | Data Wrangling and Processing 2
 8.  Mar 8     | Comparative Genomics                             | **Practice Practical in Lab**
 9.  Mar 15    | **BREAK**                                        | No Lab
-10. Mar 22    | Community Genomics                               | **Practical Exam Given in Lab**
+10. Mar 22    | Community Genomics                               | More Bash & Quality Trimming
 11. Mar 29    | Statistics and Genomics                          | Github and Project Setup
 12. Apr 5     | MDS and Linear Models                            | Genome Assembly & Project work
-13. Apr 12    | Functional Genomics                              | Genome Assembly & Project work
-14. Apr 19    | RNA and Transcriptomics and **Exam Review**      | **Practical Exam Given in Lab**
-15. Apr 26    | **Apr 28, EXAM 2**                               | Genome Assembly & Project work
-16. May 3     | Last day of classes (May 4th)                    | No Lab
+13. Apr 12    | Functional Genomics                              | GitHub & Project work
+14. Apr 19    | RNA and Transcriptomics and **Exam Review**      | Project work
+15. Apr 26    | **Monday Apr 27, EXAM 2**                        | Project work
+16. May 3     | Last day of classes (May 4th)                    | **Practical Exam May 1st**
 
 Notes:
 - Spring Break is the 16th-20th
-- Final exam week begins May 6th
+- Final exam week begins May 6th. No final exam
+
+### __13. Additional Policies:
+
+Academic honesty and Honor Code: Performance on exams, and assignments is to be based on individual effort. All text passages and ideas from published or unpublished sources must be properly cited. Violations of this standard constitute plagiarism. Please review UNH academic honesty policy and plagiarism tutorial. Violations of these policies can result in an F grade in the class.
+
+Statement of disabilities: According to the Americans with Disabilities Act (as amended, 2008), each student with a disability has the right to request services from UNH to accommodate their disability. If you are a student with a documented disability or believe you may have a disability that requires accommodations, please contact Student Accessibility Services (SAS); 227 Smith Hall, or sas.office@unh.edu.
+
+Accommodation letters are created by SAS with the student. Please follow-up with your instructor as soon as possible to ensure timely implementation of the identified accommodations in the letter. Faculty have an obligation to respond once they receive official notice of accommodations from SAS, but are under no obligation to provide retroactive accommodations.
+
+For more information, contact SAS: 227 Smith Hall,  www.unh.edu/sas, 603.862.2607, 711 (Relay NH) or sas.office@unh.edu
+
+Emotional or mental health distress: Your academic success and overall mental health are very important. If, during the semester, you find you are experiencing emotional or mental health issues, please contact the University’s (PACS) (3rd floor, Smith Hall; 603-862-2090/TTY: 7-1-1) which provides counseling appointments and other mental health services. If urgent, students may call PACS M-F, 8 a.m.-5 p.m., and schedule an Urgent Same-Day Appointment. 
+
+Confidentiality and Mandatory Reporting: The University of New Hampshire and its faculty are committed to assuring a safe and productive educational environment for all students and for the university as a whole. To this end, the university requires faculty members to report to the university’s Title IX Coordinator (Bo Zaryckyj, Bo.Zaryckyj@unh.edu, 603-862-2930/1527 TTY) any incidents of sexual violence and harassment shared by students. If you wish to speak to a confidential support service provider who does not have this reporting responsibility because their discussions with clients are subject to legal privilege, you can contact the SHARPP Center for Interpersonal Violence Awareness, Prevention, and Advocacy at (603) 862-7233/TTY (800) 735-2964. For more information about what happens when you report, how the university treats your information once a report is made to the Title IX Coordinator, your rights and reporting options at UNH (including anonymous reporting options) please visit student reporting options .  The uSafeUS app is also available for students to keep reporting options and resources easily accessible on their phones.
+
+Help us improve our campus and community climate. If you have observed or experienced an incident of bias, discrimination or harassment, please report the incident by contacting the Civil Rights & Equity Office at UNH.civilrights@unh.edu or TEL # (603) 862-2930 voice/ (603) 862-1527 TTY / 7-1-1 Relay NH,  or visit the CREO website. Anonymous reports may be submitted.
+
+Statement on classroom-behavior expectations: Students will be invited to share their thoughts in class and a diversity of opinions are welcome. Respectful communication is always expected, even when expressing differing perspectives. Supporting one’s statements with research findings is encouraged. In accordance with free speech statues, speech that contains threats of violence is prohibited. Any behavior (including harassment, sexual harassment, and racially and/or culturally derogatory language) that threatens this atmosphere will not be tolerated. Please alert the instructor immediately if you feel threatened, dismissed, or silenced at any point during our semester together and/or if your engagement in discussion has been in some way hindered by the learning environment.
+
 
 </div>
 <div class="col-xs-12 col-sm-3">
